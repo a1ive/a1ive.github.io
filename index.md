@@ -52,7 +52,7 @@ layout: default
 
 - ### [ocserv](https://github.com/a1ive/ocserv-fork)
 
-  openconnect VPN server
+  OpenConnect VPN server
 
 
 
