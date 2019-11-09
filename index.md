@@ -1,4 +1,6 @@
-# <img src="images/flag.png" style="zoom:50%;" /> a1ive.github.io
+---
+layout: default
+---
 
 ## 项目
 
