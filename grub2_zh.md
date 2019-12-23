@@ -26,9 +26,9 @@ layout: default
 
 ​    显示设备 DEVICE 上所有子卷
 
-- --output=VARIABLE, -o 将输出保存为变量
-- --path-only, -p 仅显示子卷的路径
-- --id-only, -i 仅显示子卷的 id
+- \-\-output=VARIABLE, -o 将输出保存为变量
+- \-\-path-only, -p 仅显示子卷的路径
+- \-\-id-only, -i 仅显示子卷的 id
 
 ### **btrfs-get-default-subvol** [OPTIONS] DEVICE
 
@@ -40,8 +40,8 @@ layout: default
 
 ​    显示文本文件内容
 
-- --dos 允许 DOS 格式换行符 (CR-LF)
-- **--set=VARIABLE, -s 将内容保存到变量**
+- \-\-dos 允许 DOS 格式换行符 (CR-LF)
+- **\-\-set=VARIABLE, -s 将内容保存到变量**
 
 ### chainloader [--force\|--bpb] FILE **[ADDR]**
 
@@ -53,9 +53,9 @@ layout: default
 
 ​    **警告：使用此命令可能会导致安全方面的问题**
 
-- **--alt, -a 使用 GRUB 2 内置的 EFI 加载器**
-- **--text, -t 在启动 EFI 前转换为文本模式**
-- **--boot, -b 立即执行启动**
+- **\-\-alt, -a 使用 GRUB 2 内置的 EFI 加载器**
+- **\-\-text, -t 在启动 EFI 前转换为文本模式**
+- **\-\-boot, -b 立即执行启动**
 
 ### **checktime** minute hour day month day_of_week
 
@@ -86,7 +86,7 @@ layout: default
 
 ​    显示/设置当前时间
 
-- **--set=VARIABLE, -s 将时间保存到变量**
+- **\-\-set=VARIABLE, -s 将时间保存到变量**
 
 ### **decrement** VARIABLE
 
@@ -98,14 +98,14 @@ layout: default
 
 ​    **警告：使用此命令会造成数据损失**
 
-- --if=FILE, -i 指定输入文件
-- --str=STRING, -s 指定输入字符串
-- --hex=HEX, -h 指定输入十六进制数
-- --of=FILE, -o 指定输出文件
-- --bs=BYTES, -b 指定块大小
-- --count=n, -c 指定块数目
-- --skip=n 跳过输入的前n个块
-- --seek=n 跳过输出的前n个块
+- \-\-if=FILE, -i 指定输入文件
+- \-\-str=STRING, -s 指定输入字符串
+- \-\-hex=HEX, -h 指定输入十六进制数
+- \-\-of=FILE, -o 指定输出文件
+- \-\-bs=BYTES, -b 指定块大小
+- \-\-count=n, -c 指定块数目
+- \-\-skip=n 跳过输入的前n个块
+- \-\-seek=n 跳过输出的前n个块
 
 ### **dp** FILE/DEVICE
 
@@ -125,7 +125,7 @@ layout: default
 
 ​    加载 UEFI 驱动
 
-- --nc, -n 仅加载驱动，不进行连接
+- \-\-nc, -n 仅加载驱动，不进行连接
 
 ### export VARIABLE**[=VALUE]** ...
 
@@ -137,21 +137,21 @@ layout: default
 
 ​    **警告：除以零会导致死机或重启等意外情况**
 
-- --set=VARIABLE, -s 将结果保存到变量
+- \-\-set=VARIABLE, -s 将结果保存到变量
 
 ### **getargs** OPTIONS STRING VARIABLE
 
 ​    从 GRUB 2 EFI 文件接收到的命令行获取参数
 
-- --key, -k 获取是否设定此参数
-- --value, -v 获取参数的值
+- \-\-key, -k 获取是否设定此参数
+- \-\-value, -v 获取参数的值
 
 ### **getenv** [OPTIONS] EFI_ENV VARIABLE
 
 ​    获取 UEFI 环境变量
 
-- --guid=GUID, -g 设置要查询变量的 GUID，默认为全局变量
-- --type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
+- \-\-guid=GUID, -g 设置要查询变量的 GUID，默认为全局变量
+- \-\-type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
 
 ### **getkey** [-n] [VARIABLE]
 
@@ -161,8 +161,8 @@ layout: default
 
 ​    选择 GPT 磁盘要启动的下一分区
 
-- --set-device=VARIABLE, -d 将分区名保存到变量
-- --set-uuid=VARIABLE, -u 将分区 UUID 保存到变量
+- \-\-set-device=VARIABLE, -d 将分区名保存到变量
+- \-\-set-uuid=VARIABLE, -u 将分区 UUID 保存到变量
 
 ### **gptrepair** DEVICE
 
@@ -174,9 +174,9 @@ layout: default
 
 ​    显示文件或设备的十六进制数据。(mem)为内存设备。
 
-- --skip=n, -s 跳过起始n字节
-- --length=n, -n 设置读取字节数
-- **--quiet, -q 不显示输出**
+- \-\-skip=n, -s 跳过起始n字节
+- \-\-length=n, -n 设置读取字节数
+- **\-\-quiet, -q 不显示输出**
 
 ### **hiddenentry** "TITLE" --hotkey=KEY { COMMANDS }
 
@@ -196,7 +196,7 @@ layout: default
 
 ​    从 ini 文件获取数据
 
-- --set=VARIABLE, -s 将数据保存到变量
+- \-\-set=VARIABLE, -s 将数据保存到变量
 
 ### **initrdefi** FILE
 
@@ -210,8 +210,8 @@ layout: default
 
 ​    将文件挂载为虚拟盘
 
-- --delete, -d 删除指定的虚拟盘
-- **--mem, -m 将文件复制到内存并挂载，允许写入操作**
+- \-\-delete, -d 删除指定的虚拟盘
+- **\-\-mem, -m 将文件复制到内存并挂载，允许写入操作**
 
 ### **lsefienv**
 
@@ -225,12 +225,12 @@ layout: default
 
 ​    创建 UEFI 虚拟盘并启动
 
-- --mem, -m 加载到内存
-- --pause, -p 启动前暂停以查看信息
-- --type=CD/HD/FD, -t 指定磁盘类型为光盘/硬盘/软盘
-- --disk, -d 仿真整个磁盘
-- --rw, -w 允许写入虚拟盘，仅对内存盘有效
-- --nb, -n 不启动此虚拟盘
+- \-\-mem, -m 加载到内存
+- \-\-pause, -p 启动前暂停以查看信息
+- \-\-type=CD/HD/FD, -t 指定磁盘类型为光盘/硬盘/软盘
+- \-\-disk, -d 仿真整个磁盘
+- \-\-rw, -w 允许写入虚拟盘，仅对内存盘有效
+- \-\-nb, -n 不启动此虚拟盘
 
 ### **moksbset**
 
@@ -244,12 +244,12 @@ layout: default
 
 ​    启动 NT6+ VHD/VHDX/WIM
 
-- --gui, -g 启用图形启动信息
-- --pause, -p 启动前暂停
-- --vhd, -v 指定文件类型为 VHD/VHDX
-- --wim, -w 指定文件类型为 WIM
-- --efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
-- --sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
+- \-\-gui, -g 启用图形启动信息
+- \-\-pause, -p 启动前暂停
+- \-\-vhd, -v 指定文件类型为 VHD/VHDX
+- \-\-wim, -w 指定文件类型为 WIM
+- \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
+- \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
 
 ### **partnew** OPTIONS DISK PARTNUM
 
@@ -257,11 +257,11 @@ layout: default
 
 ​    **警告：使用此命令有可能会造成数据损失**
 
-- --active, -a 激活该分区
-- --file=FILE, -f 将文件作为分区内容使用
-- --type=HEX, -t 指定分区类型，0x00为自动，0x10为自动隐藏
-- --start=n, -s 指定开始地址(单位为扇区)
-- --length=n, -l 指定长度(单位为扇区)
+- \-\-active, -a 激活该分区
+- \-\-file=FILE, -f 将文件作为分区内容使用
+- \-\-type=HEX, -t 指定分区类型，0x00为自动，0x10为自动隐藏
+- \-\-start=n, -s 指定开始地址(单位为扇区)
+- \-\-length=n, -l 指定长度(单位为扇区)
 
 ### **peinfo** FILE
 
@@ -275,22 +275,22 @@ layout: default
 
 ​    检测设备信息
 
-- --set=VARIABLE, -s 将返回值设为变量
-- --driver, -d 检测驱动
-- --partmap, -p 检测分区表类型
-- --fs, -f 检测文件系统类型
-- --fs-uuid, -u 检测文件系统 UUID
-- --label, -l 检测文件系统卷标
-- --partuuid, -g 检测分区 UUID (GPT分区表)
-- **--bootable, -b 检测是否激活 (msdos分区表)**
-- **--quiet, -q 不显示报错**
+- \-\-set=VARIABLE, -s 将返回值设为变量
+- \-\-driver, -d 检测驱动
+- \-\-partmap, -p 检测分区表类型
+- \-\-fs, -f 检测文件系统类型
+- \-\-fs-uuid, -u 检测文件系统 UUID
+- \-\-label, -l 检测文件系统卷标
+- \-\-partuuid, -g 检测分区 UUID (GPT分区表)
+- **\-\-bootable, -b 检测是否激活 (msdos分区表)**
+- **\-\-quiet, -q 不显示报错**
 
 ### **rand** [OPTIONS] VARIABLE
 
 ​    生成伪随机数
 
-- --from=n, -f 设置随机数下界
-- --to=n, -t 设置随机数上界
+- \-\-from=n, -f 设置随机数下界
+- \-\-to=n, -t 设置随机数上界
 
 ### **read_file** FILE VARIABLE ...
 
@@ -302,25 +302,25 @@ layout: default
 
 ​    **警告：使用此命令可能会导致安全方面的问题**
 
-- --install, -i 安装安全策略
-- --uninstall, -u 卸载安全策略
-- --status, -s 显示安全策略状态
+- \-\-install, -i 安装安全策略
+- \-\-uninstall, -u 卸载安全策略
+- \-\-status, -s 显示安全策略状态
 
 ### search OPTIONS STRING
 
 ​    搜索磁盘
 
-- --file, -f 按文件搜索
-- --label, -l 按文件系统卷标搜索
-- --fs-uuid, -u 按文件系统 UUID 搜索
-- --part-label, -L 按分区卷标搜索
-- **--part-uuid, g 按分区 UUID 搜索 (GPT)**
-- **--disk-uuid, U 按磁盘 UUID 搜索 (GPT)**
-- --set=VARIABLE, -s 将第一个找到的设备保存到变量
-- --no-floppy, -n 不检测软盘
-- **--quiet, -q 如果没有匹配，不显示错误**
-- --hint=HINT, -h 指定先从某设备开始搜索，如果以逗号结束，则也会搜索子分区
-- --hint-ieee1275=HINT --hint-bios=HINT --hint-baremetal=HINT --hint-efi=HINT --hint-arc=HINT 如果运行于 IEEE1275/BIOS/baremetal/EFI 下，指定先从某设备开始搜索
+- \-\-file, -f 按文件搜索
+- \-\-label, -l 按文件系统卷标搜索
+- \-\-fs-uuid, -u 按文件系统 UUID 搜索
+- \-\-part-label, -L 按分区卷标搜索
+- **\-\-part-uuid, g 按分区 UUID 搜索 (GPT)**
+- **\-\-disk-uuid, U 按磁盘 UUID 搜索 (GPT)**
+- \-\-set=VARIABLE, -s 将第一个找到的设备保存到变量
+- \-\-no-floppy, -n 不检测软盘
+- **\-\-quiet, -q 如果没有匹配，不显示错误**
+- \-\-hint=HINT, -h 指定先从某设备开始搜索，如果以逗号结束，则也会搜索子分区
+- \-\-hint-ieee1275=HINT --hint-bios=HINT --hint-baremetal=HINT --hint-efi=HINT --hint-arc=HINT 如果运行于 IEEE1275/BIOS/baremetal/EFI 下，指定先从某设备开始搜索
 
 ### **setenv** [OPTIONS] EFI_ENV VALUE
 
@@ -330,31 +330,31 @@ layout: default
 
 ​    **警告：使用此命令可能会导致安全方面的问题**
 
-- --guid=GUID, -g 设置要写入变量的 GUID，默认为全局变量
-- --type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
+- \-\-guid=GUID, -g 设置要写入变量的 GUID，默认为全局变量
+- \-\-type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
 
 ### **shell** [OPTIONS] CMDLINE
 
 ​    启动 UEFI Shell
 
-- --nostartup 不执行默认启动脚本
-- --noconsoleout 不显示终端输出
-- --noconsolein 不接收用户输入
-- --delay=n 设置执行启动脚本前等待时间
-- --nomap 不显示设备映射列表
-- --noversion 不显示版本信息
-- --startup 执行默认启动脚本
-- --nointerrupt 禁止中断执行过程
-- --exit 命令执行完成后自动退出
-- --device=DEVICE 指定默认 Device Path
+- \-\-nostartup 不执行默认启动脚本
+- \-\-noconsoleout 不显示终端输出
+- \-\-noconsolein 不接收用户输入
+- \-\-delay=n 设置执行启动脚本前等待时间
+- \-\-nomap 不显示设备映射列表
+- \-\-noversion 不显示版本信息
+- \-\-startup 执行默认启动脚本
+- \-\-nointerrupt 禁止中断执行过程
+- \-\-exit 命令执行完成后自动退出
+- \-\-device=DEVICE 指定默认 Device Path
 
 ### **strconv** [OPTIONS] STRING
 
 ​    字符串 UTF-8/GBK 编码转换
 
-- --gbk, -g UTF-8 -> GBK
-- --utf8, -u GBK -> UTF-8 (默认)
-- --set=VARIABLE, -s 将返回值设为变量
+- \-\-gbk, -g UTF-8 -> GBK
+- \-\-utf8, -u GBK -> UTF-8 (默认)
+- \-\-set=VARIABLE, -s 将返回值设为变量
 
 ### **submenu_exit**
 
@@ -386,25 +386,25 @@ layout: default
 
 ​    UEFI 虚拟 FAT 磁盘操作
 
-- --create, -c 创建虚拟 FAT 磁盘
+- \-\-create, -c 创建虚拟 FAT 磁盘
 
-- --add=NAME FILE, -a 指定将文件 FILE 加入虚拟盘，虚拟盘内文件名为 NAME
+- \-\-add=NAME FILE, -a 指定将文件 FILE 加入虚拟盘，虚拟盘内文件名为 NAME
 
-- --mem, -m 指定文件载入内存，允许写入文件
+- \-\-mem, -m 指定文件载入内存，允许写入文件
 
-- --install, -i 使虚拟盘在 UEFI 中可见
+- \-\-install, -i 使虚拟盘在 UEFI 中可见
 
-- --boot, -b 启动虚拟盘
+- \-\-boot, -b 启动虚拟盘
 
-- --ls, -l 列出虚拟盘中所有文件
+- \-\-ls, -l 列出虚拟盘中所有文件
 
-- --patch=FILE STRING, -p 指定要修改的文件名，文件必须在内存中
+- \-\-patch=FILE STRING, -p 指定要修改的文件名，文件必须在内存中
 
-- --offset=n, -o 指定修改的偏移量
+- \-\-offset=n, -o 指定修改的偏移量
 
-- --search=STRING, -s 搜索字符串
+- \-\-search=STRING, -s 搜索字符串
 
-- --count=n, -c 指定搜索次数
+- \-\-count=n, -c 指定搜索次数
 
   搜索及替换的字符串支持以下格式
 
@@ -418,19 +418,19 @@ layout: default
 
 ​    将 vhd 文件挂载为虚拟盘
 
-- --delete, -d 删除虚拟盘
-- --partitions -p 模拟带分区的硬盘
+- \-\-delete, -d 删除虚拟盘
+- \-\-partitions -p 模拟带分区的硬盘
 
 ### **wimboot** [OPTIONS] @:NAME:FILE
 
 ​    启动 WIM 文件
 
-- --gui, -g 启用图形启动信息
-- --rawbcd, -b 禁用 BCD 自动修改 (.exe 改为 .efi)
-- --rawwim, -w 禁用 WIM 自动修改
-- --index=n, -i 指定要启动的WIM卷号
-- --pause, -p 启动前暂停
-- --inject=WIN32_PATH, -j 指定射入文件夹，默认为 \Windows\Syatem32
+- \-\-gui, -g 启用图形启动信息
+- \-\-rawbcd, -b 禁用 BCD 自动修改 (.exe 改为 .efi)
+- \-\-rawwim, -w 禁用 WIM 自动修改
+- \-\-index=n, -i 指定要启动的WIM卷号
+- \-\-pause, -p 启动前暂停
+- \-\-inject=WIN32_PATH, -j 指定射入文件夹，默认为 \Windows\Syatem32
 
 ### **write_bytes** ADDR VALUE ...
 
