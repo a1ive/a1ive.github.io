@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# GRUB 2 中文手册
+
 ## 命令
 
 ### **blscfg** FILE
