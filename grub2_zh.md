@@ -320,7 +320,11 @@ layout: default
 - \-\-no-floppy, -n 不检测软盘
 - **\-\-quiet, -q 如果没有匹配，不显示错误**
 - \-\-hint=HINT, -h 指定先从某设备开始搜索，如果以逗号结束，则也会搜索子分区
-- \-\-hint-ieee1275=HINT --hint-bios=HINT --hint-baremetal=HINT --hint-efi=HINT --hint-arc=HINT 如果运行于 IEEE1275/BIOS/baremetal/EFI 下，指定先从某设备开始搜索
+- \-\-hint-ieee1275=HINT 如果运行于 IEEE1275 环境下，指定先从某设备开始搜索
+- \-\-hint-bios=HINT 如果运行于 BIOS 环境下，指定先从某设备开始搜索
+- \-\-hint-baremetal=HINT 如果运行于 baremetal 环境下，指定先从某设备开始搜索
+- \-\-hint-efi=HINT 如果运行于 EFI 环境下，指定先从某设备开始搜索
+- \-\-hint-arc=HINT 如果运行于 ARC 环境下，指定先从某设备开始搜索
 
 ### **setenv** [OPTIONS] EFI_ENV VALUE
 
