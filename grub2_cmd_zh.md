@@ -274,6 +274,37 @@ layout: default
 
 ​    **警告：使用此命令有可能会造成数据损失**
 
+### hashsum -h HASH [OPTIONS] [-c FILE [-p PREFIX]] [FILE1 [FILE2 ...]]
+
+​    计算或校验哈希值，若哈希校验成功，则返回0。
+
+- \-\-hash=HASH, -h 指定哈希值类型，支持 'adler32’, ‘crc64’, ‘crc32’, ‘crc32rfc1510’, ‘crc24rfc2440’, ‘md4’, ‘md5’, ‘ripemd160’, ‘sha1’, ‘sha224’, ‘sha256’, ‘sha512’, ‘sha384’, ‘tiger192’, ‘tiger’, ‘tiger2’, ‘whirlpool’
+- \-\-check=FILE, -c 指定哈希列表文件(在 UNIX 下使用 md5sum 生成)
+- \-\-prefix=PREFIX, -p 指定文件目录
+- \-\-keep-going, -k 第一次出错后不停止检验，不加此选项则停止检验
+- \-\-uncompress, -u 在校验前解压文件
+
+### hdparm [OPTIONS] DISK
+
+​    获取/设置 ATA 磁盘参数
+
+- \-\-apm=n, -B 设置高级电源管理 (APM)，1=低，...，254=高，255=关
+- \-\-power, -C 显示电源模式
+- \-\-security-freeze, -F 冻结ATA安全设置直到重置
+- \-\-health, -H 显示 SMART 健康状态
+- \-\-aam=n, -M 设置自动噪声管理 (AAM)，0=关，128=安静，...，254=快速
+- \-\-standby-timeout=n, -S 设置待机超时，0=关，1=5s，2=10s，...，240=20m，241=30m，...
+- \-\-standby, -y 设为待机模式
+- \-\-sleep, -Y 设为睡眠模式
+- \-\-identify, -i 显示设备标识和设置
+- \-\-dumpid, -I 显示 ATA IDENTIFY 扇区的原始内容
+- \-\-smart=n 禁用/启用 SMART (0/1)
+- \-\-quiet, -q 不显示信息
+
+### help [PATTERN ...]
+
+​    显示内置命令的帮助信息。如果未加参数，则显示所有可用命令。
+
 ### hexdump [OPTIONS] FILE/DEVICE **[VARIABLE]**
 
 ​    显示文件或设备的十六进制数据。(mem)为内存设备。
@@ -292,6 +323,12 @@ layout: default
 
 ​    **警告：使用此命令会造成数据损失**
 
+### inb [OPTIONS] PORT
+
+​    从端口读取8比特数值
+
+- -v=VARIABLE 将读到的数值写入变量
+
 ### **increment** VARIABLE
 
 ​    使变量的值加一
@@ -306,9 +343,74 @@ layout: default
 
 ​    加载 Linux 初始内存盘，在 linuxefi 之后使用
 
-### **linuxefi** FILE CMDLINE
+### inl [OPTIONS] PORT
+
+​    从端口读取32比特数值，参数同 "inb"
+
+### inw [OPTIONS] PORT
+
+​    从端口读取16比特数值，参数同 "inb"
+
+### keystatus [OPTIONS]
+
+​    若 Shift/Ctrl/Alt 键按下，则返回 0
+
+​    只有部分平台支持检测修饰键状态，若不加任何参数，则此命令用于检测是否支持修饰健状态。
+
+- \-\-shift, -s 检测 Shift 键
+- \-\-ctrl, -c 检测 Ctrl 键
+- \-\-alt, -a 检测 Alt 键
+
+### kfreebsd [OPTIONS] FILE [CMDLINE]
+
+​    加载 FreeBSD 内核
+
+### kfreebsd_loadenv FILE
+
+   加载 FreeBSD 环境变量
+
+### kfreebsd_module FILE [CMDLINE]
+
+​    加载 FreeBSD 模块
+
+### kfreebsd_module_elf FILE [CMDLINE]
+
+​    加载 FreeBSD 模块 (ELF)
+
+### knetbsd [OPTIONS] FILE [CMDLINE]
+
+​    加载 NetBSD 内核
+
+### knetbsd_module FILE [CMDLINE]
+
+​    加载 NetBSD 模块
+
+### knetbsd_module_elf FILE [CMDLINE]
+
+​    加载 NetBSD 模块 (ELF)
+
+### kopenbsd [OPTIONS] FILE [CMDLINE]
+
+​    加载 OpenBSD 内核
+
+### kopenbsd_ramdisk FILE
+
+​    加载 OpenBSD 内存盘
+
+### **linuxefi** FILE [CMDLINE]
 
 ​    加载 Linux 内核
+
+### list_env [OPTIONS]
+
+​    列出环境块文件中的所有变量
+
+- \-\-file=FILE, -f 指定文件名，默认文件名为 ${prefix}/grubenv
+- \-\-skip-sig, -s 跳过环境文件的签名检查
+
+### load_env [OPTIONS] [VARIABLE ...]
+
+  从环境块文件加载变量，参数同 "list_env"
 
 ### loopback [OPTIONS] DEVICE FILE
 
@@ -354,6 +456,18 @@ layout: default
 - \-\-wim, -w 指定文件类型为 WIM
 - \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
 - \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
+
+### outb PORT VALUE [MASK]
+
+​    向端口写入8比特数值
+
+### outl PORT VALUE [MASK]
+
+​    向端口写入32比特数值
+
+### outw PORT VALUE [MASK]
+
+​    向端口写入16比特数值
 
 ### **partnew** OPTIONS DISK PARTNUM
 
