@@ -23,9 +23,10 @@ layout: default
 - \-\-oemid=STRING, -o 设置 RSDP, XSDT 和 RSDT 的 OEMID
 - \-\-oemtable=STRING, -t 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE ID
 - \-\-oemtablerev=n, -r 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE 版本
-- \-\-oemtablecreator=STRING, -c Set creator field of RSDP, XSDT and RSDT.
-- \-\-oemtablecreatorrev=n, -d Set creator revision of RSDP, XSDT and RSDT.
+- \-\-oemtablecreator=STRING, -c 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator。
+- \-\-oemtablecreatorrev=n, -d 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator 版本。
 - \-\-no-ebda, -e 不更新 EBDA。可以防止部分 BIOS 死机，对无法从 GRUB 接收 RSDP 的 OS 无效。
+- \-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。
 
 ### background_image [OPTIONS] [FILE]
 
