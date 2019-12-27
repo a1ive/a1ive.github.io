@@ -10,15 +10,19 @@ layout: default
 
   Download: [GitHub Releases](https://github.com/a1ive/grub2-filemanager/releases)
 
+  若下载速度慢，建议使用 [offcloud](https://offcloud.com/) 下载
+
   Help to translate: [Crowdin](https://crowdin.com/project/grub2-filemanager)
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub2-filemanager)
 
 - ### [GNU GRUB2](https://github.com/a1ive/grub)
 
-   Fork of GRUB 2 to add various features. 
+  Fork of GRUB 2 to add various features. 
 
-  Download: [GitHub Releases](https://github.com/a1ive/grub/releases/tag/latest) [GitHub Mirror](http://github-mirror.bugkiller.org/a1ive/grub/releases/tag/latest)
+  Download: [GitHub Releases](https://github.com/a1ive/grub/releases/tag/latest)
+
+  若下载速度慢，建议使用 [offcloud](https://offcloud.com/) 下载
 
   Manual: [简体中文](./grub2_zh.html)
 

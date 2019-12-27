@@ -26,7 +26,7 @@ layout: default
 - \-\-oemtablecreator=STRING, -c 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator。
 - \-\-oemtablecreatorrev=n, -d 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator 版本。
 - \-\-no-ebda, -e 不更新 EBDA。可以防止部分 BIOS 死机，对无法从 GRUB 接收 RSDP 的 OS 无效。
-- \-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。
+- **\-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。**
 
 ### background_image [OPTIONS] [FILE]
 
@@ -314,9 +314,11 @@ layout: default
 - \-\-length=n, -n 设置读取字节数
 - **\-\-quiet, -q 不显示输出**
 
-### **hiddenentry** "TITLE" --hotkey=KEY { COMMANDS }
+### **hiddenentry** "TITLE" [OPTIONS] [arg ...] { COMMAND; ... }
 
-​    添加隐藏菜单，仅对 gfxmenu 有效。
+​    添加隐藏菜单，仅对 gfxmenu 有效
+
+​    参数同 "menuentry"
 
 ### **imgwrite** FILE DEVICE
 
@@ -420,6 +422,30 @@ layout: default
 - \-\-delete, -d 删除指定的虚拟盘
 - **\-\-mem, -m 将文件复制到内存并挂载，允许写入操作**
 
+### ls [OPTIONS] [FILE ...]
+
+​    列出设备或文件
+
+​    若无参数，则列出所有设备。如果参数是用括号括起来的设备名称，则打印该设备文件系统的名称。如果参数是作为绝对文件名指定的目录，则列出该目录的内容。
+
+- \-\-long, -l 显示更详细的信息
+- \-\-human-readable, -h 按可读格式显示文件大小 (KB, MB ...)
+- \-\-all, -a 列出所有文件
+
+### lsacpi [OPTIONS]
+
+​    显示 ACPI 信息
+
+- \-\-v1, -1 仅显示版本1 ACPI 表
+
+- \-\-v2, -2 仅显示版本2和版本3 ACPI 表
+
+### lspci [OPTIONS]
+
+​    列出 PCI 设备
+
+- \-\-iospace, -i 显示 I/O 空间
+
 ### **lsefienv**
 
 ​    列出所有 EFI 环境变量
@@ -438,6 +464,34 @@ layout: default
 - \-\-disk, -d 仿真整个磁盘
 - \-\-rw, -w 允许写入虚拟盘，仅对内存盘有效
 - \-\-nb, -n 不启动此虚拟盘
+
+### md5sum arg ...
+
+​    即 "hashsum --hash md5 arg ..."
+
+### menuentry "TITLE" [OPTIONS] [arg ...] { COMMAND; ... }
+
+​    定义 GRUB 菜单项，菜单名称为 TITLE
+
+​    当菜单项被选中执行后，若指定 \-\-id，则环境变量 chosen 的值会被设为 \-\-id 的值。大括号里面的命令会被执行，若最后一条命令成功执行，且内核已被加载，会自动执行 boot 命令。
+
+​    包括 TITLE 在内的所有参数 (arg ...) 都会做为位置参数传递，且 TITLE 会被分配给 $1。
+
+- \-\-class=STRING 为菜单项分类，按不同类别显示图标
+- \-\-users=UESR[,USER] 列出允许执行此菜单的用户
+- \-\-hotkey=KEY 设置热键
+- \-\-source=STRING Use STRING as menu entry body.
+- \-\-id=STRING 将唯一标识符与菜单项关联。id 不能以数字开头，仅支持 ASCII 字母数字，下划线和连字符
+- \-\-unrestricted 允许所有用户执行此菜单
+
+​    特殊热键：
+
+- backspace 退格键
+- tab 制表键
+- delete 删除键
+- insert 插入键
+- esc 退出键
+- f1~f12 功能键
 
 ### **moksbset**
 
@@ -482,6 +536,13 @@ layout: default
 - \-\-start=n, -s 指定开始地址(单位为扇区)
 - \-\-length=n, -l 指定长度(单位为扇区)
 
+### pcidump OPTIONS
+
+​    显示PCI配置空间的原始转储
+
+- -d [vendor]:\[device] 按供应商和设备ID选择设备
+- -s [bus]:\[slot]\[\.func] 根据其在总线上的位置选择设备
+
 ### **peinfo** FILE
 
 ​    查看 PE (Portable Executable) 文件头
@@ -511,9 +572,47 @@ layout: default
 - \-\-from=n, -f 设置随机数下界
 - \-\-to=n, -t 设置随机数上界
 
+### rdmsr [OPTIONS] ADDR
+
+​    Read a model-specific register at address ADDR.
+
+​    Please note that on SMP systems, reading from a MSR that has a scope per hardware thread, implies that the value that is returned only applies to the particular cpu/core/thread that runs the command.
+
+​    Also, if you specify a reserved or unimplemented MSR address, it will cause a general protection exception (which is not currently being handled) and the system will reboot.
+
+- -v VARIABLE 将数值保存到变量
+
+### read_byte [OPTIONS] ADDR
+
+​    从 ADDR 读取8比特数值
+
+- -v VARIABLE 将数值保存到变量
+
+### read_dword [OPTIONS] ADDR
+
+​    从 ADDR 读取32比特数值，参数同 "read_byte"
+
 ### **read_file** FILE VARIABLE ...
 
 ​    读取文件，将文件的内容逐行设置为变量
+
+### read_word [OPTIONS] ADDR
+
+​    从 ADDR 读取16比特数值，参数同 "read_byte"
+
+### regexp [OPTIONS] 'REGEXP' "STRING"
+
+​    测试正则表达式 REGEXP 是否匹配字符串 STRING
+
+​    支持的正则表达式是 POSIX.2 扩展正则表达式。
+
+​    如果给定了--set选项，则将匹配的第一个子表达式存储在变量var中。 子表达式按其开头括号从 1 开始编号。 数字默认为 1。
+
+- \-\-set=[NUMBER:]\[VARIABLE], -s 将第 n 个匹配字符串保存到变量中
+
+### save_env [OPTIONS] VARIABLE ...
+
+​    将变量从 GRUB 环境保存到环境块文件，参数同 "load_env"
 
 ### **sbpolicy** [OPTIONS]
 
@@ -545,6 +644,10 @@ layout: default
 - \-\-hint-efi=HINT 如果运行于 EFI 环境下，指定先从某设备开始搜索
 - \-\-hint-arc=HINT 如果运行于 ARC 环境下，指定先从某设备开始搜索
 
+### serial [OPTIONS]
+
+​    配置串口
+
 ### **setenv** [OPTIONS] EFI_ENV VALUE
 
 ​    写入 UEFI 环境变量
@@ -555,6 +658,26 @@ layout: default
 
 - \-\-guid=GUID, -g 设置要写入变量的 GUID，默认为全局变量
 - \-\-type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
+
+### setpci [OPTIONS] REGISTER[=VALUE[:MASK]]
+
+​    操作PCI设备
+
+- -d [vendor]:\[device] 按供应商和设备ID选择设备
+- -s [bus]:\[slot]\[\.func] 根据其在总线上的位置选择设备
+- -v VARIABLE 将数据保存到变量
+
+### sha1sum arg ...
+
+​    即 "hashsum --hash sha1 arg ..."
+
+### sha256sum arg ...
+
+​    即 "hashsum --hash sha256 arg ..."
+
+### sha512sum arg ...
+
+​    即 "hashsum --hash sha512 arg ..."
 
 ### **shell** [OPTIONS] CMDLINE
 
@@ -571,6 +694,30 @@ layout: default
 - \-\-exit 命令执行完成后自动退出
 - \-\-device=DEVICE 指定默认 Device Path
 
+### sleep [OPTIONS] n
+
+​    等待 n 秒
+
+​    若倒计时结束，则返回 0。若倒计时被 ESC 中断，则返回 1。
+
+- \-\-verbose, -v 显示倒计时秒数
+- \-\-interruptible, -i 允许使用 ESC 中断倒计时
+
+### smbios [OPTIONS]
+
+​    检索 SMBIOS 信息
+
+- \-\-type=TYPE, -t Match structures with the given type.
+- \-\-handle=HANDLE, -h Match structures with the given handle.
+- \-\-match=MATCH, -m Select a structure when several match.
+- \-\-get-byte=OFFSET, -b Get the byte's value at the given offset.
+- \-\-get-word=OFFSET, -w Get two bytes' value at the given offset.
+- \-\-get-dword=OFFSET, -d Get four bytes' value at the given offset.
+- \-\-get-qword=OFFSET, -q Get eight bytes' value at the given offset.
+- \-\-get-string=OFFSET, -s Get the string specified at the given offset.
+- \-\-get-uuid=OFFSET, -u Get the UUID's value at the given offset.
+- \-\-set=VARIABLE 将数据保存到变量
+
 ### **strconv** [OPTIONS] STRING
 
 ​    字符串 UTF-8/GBK 编码转换
@@ -578,6 +725,12 @@ layout: default
 - \-\-gbk, -g UTF-8 -> GBK
 - \-\-utf8, -u GBK -> UTF-8 (默认)
 - \-\-set=VARIABLE, -s 将返回值设为变量
+
+### submenu "TITLE" [OPTIONS] { MENU ... }
+
+​    定义子菜单，当此项被选中执行时，会显示包含大括号里面菜单项的新菜单
+
+​    参数同 "menuentry"
 
 ### **submenu_exit**
 
