@@ -4,6 +4,8 @@ layout: default
 
 - ### [GRUB2-FileManager](https://github.com/a1ive/grub2-filemanager)
 
+  ![](https://img.shields.io/github/license/a1ive/grub2-filemanager)![](https://img.shields.io/github/release/a1ive/grub2-filemanager)![](https://badges.crowdin.net/grub2-filemanager/localized.svg)![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total)
+
   File manager for GRUB 2.
 
   [简体中文](https://a1ive.github.io/grub2-filemanager/)
@@ -17,6 +19,8 @@ layout: default
   Mirrors: [Gitee](https://gitee.com/a1ive/grub2-filemanager)
 
 - ### [GNU GRUB2](https://github.com/a1ive/grub)
+
+  ![](https://img.shields.io/github/license/a1ive/grub)![](https://img.shields.io/travis/a1ive/grub)![](https://img.shields.io/github/release-date/a1ive/grub)![](https://img.shields.io/github/downloads/a1ive/grub/total)
 
   Fork of GRUB 2 to add various features. 
 
