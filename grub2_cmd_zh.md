@@ -27,6 +27,7 @@ layout: default
 - \-\-oemtablecreatorrev=n, -d 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator 版本。
 - \-\-no-ebda, -e 不更新 EBDA。可以防止部分 BIOS 死机，对无法从 GRUB 接收 RSDP 的 OS 无效。
 - **\-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。**
+- **\-\-msdm 显示 MSDM 表**
 
 ### background_image [OPTIONS] [FILE]
 
@@ -241,6 +242,8 @@ layout: default
 ### **getargs** OPTIONS STRING VARIABLE
 
 ​    从 GRUB 2 EFI 文件接收到的命令行获取参数
+
+​    若命令执行成功(参数/值存在)，则返回 0。
 
 - \-\-key, -k 获取是否设定此参数
 - \-\-value, -v 获取参数的值
@@ -736,9 +739,35 @@ layout: default
 
 ​    从当前子菜单退出
 
+### terminfo [OPTIONS] [TERM]
+
+​    设置终端类型
+
+### testspeed [OPTIONS] FILE
+
+​    测试文件读取速度
+
+- \-\-size=n, -s 指定每次读取的大小
+
 ### **tetris**
 
 ​    俄罗斯方块游戏。请先执行 terminal_output console
+
+### tr [OPTIONS] [SET1] [SET2] [STRING]
+
+​    将字符串 STRING 中的字符 SET1 替换为 SET2
+
+​    若输入两个参数，则输入字符串须由 \-\-set 选项指定。
+
+- \-\-set=VARIABLE, -s 将返回值保存到变量
+- \-\-upcase, -U 转换为大写
+- \-\-downcase, -D 转换为小写
+
+### true
+
+​    直接返回 TRUE (0)
+
+​    用于 if 或 while 语句。
 
 ### **uuid4** VARIABLE
 
