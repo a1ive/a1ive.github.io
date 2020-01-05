@@ -27,7 +27,7 @@ layout: default
 - \-\-oemtablecreatorrev=n, -d 设置 RSDP, XSDT 和 RSDT 的 OEMTABLE creator 版本。
 - \-\-no-ebda, -e 不更新 EBDA。可以防止部分 BIOS 死机，对无法从 GRUB 接收 RSDP 的 OS 无效。
 - **\-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。**
-- **\-\-msdm 显示 MSDM 表**
+- **\-\-msdm 显示/加载 MSDM 表**
 
 ### background_image [OPTIONS] [FILE]
 
@@ -512,6 +512,7 @@ layout: default
 - \-\-pause, -p 启动前暂停
 - \-\-vhd, -v 指定文件类型为 VHD/VHDX
 - \-\-wim, -w 指定文件类型为 WIM
+- \-\-win, -n 启动磁盘上的 Windows
 - \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
 - \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
 
