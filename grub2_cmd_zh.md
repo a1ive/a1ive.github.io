@@ -29,6 +29,22 @@ layout: default
 - **\-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。**
 - **\-\-msdm 显示/加载 MSDM 表**
 
+### appleloader CMDLINE
+
+​    Apple legacy boot loader.
+
+### authenticate [userlist]
+
+​    检查用户是否在用户列表中或是否在变量 "superusers" 的值中列出
+
+​    如果“超级用户”为空，则此命令返回 true。
+
+### background_color COLOR
+
+​    设置活动终端的背景颜色
+
+​    只有使用 "gfxterm" 时才能更改背景颜色。此命令设置没有文本的空白区域的颜色，文本背景颜色由环境变量color_normal, color_highlight, menu_color_normal, menu_color_highlight控制。
+
 ### background_image [OPTIONS] [FILE]
 
 ​    为激活的终端设置背景图片
@@ -39,6 +55,22 @@ layout: default
 
 - \-\-mode=stretch/normal, -m 设置背景图模式为拉伸或正常
 
+### backtrace
+
+​    打印回溯信息
+
+### badram ADDR1,MASK1[,ADDR2,MASK2[,...]]
+
+​    屏蔽错误的内存
+
+​    此命令通知内存管理器应过滤掉 RAM 的指定区域。只要加载的内核从 GRUB 获取其内存映射，加载内核之后仍然有效。支持此功能的内核通常包括 Linux, GNU Mach, FreeBSD 内核和 Multiboot 内核。
+
+​    语法与 Memtest86+ 提供的语法相同：地址/掩码对的列表。 给定一个页面对齐地址和一个基地址/掩码对，如果掩码启用的页面对齐地址的所有位都与基地址匹配，则意味着该页面将被过滤。
+
+### blocklist FILE
+
+​    打印文件的块列表
+
 ### **blscfg** FILE
 
 ​    导入 BootLoaderSpec (BLS) 配置
@@ -46,6 +78,10 @@ layout: default
 ### **bls_import** FILE
 
 ​    同 "blscfg"
+
+### boot
+
+​    启动已加载的操作系统
 
 ### **btrfs-info** DEVICE
 
@@ -101,15 +137,45 @@ layout: default
 |  -   | 范围值                | 5-45     |
 |  /   | 步进值                | 10/5     |
 
+### clear
+
+​    清屏
+
 ### **clear_menu**
 
 ​    清空当前菜单
 
 ​    **警告：使用本命令前请务必禁用ESC export grub_disable_esc=1**
 
+### cmosclean byte:bit
+
+​    清除 CMOS 位于 byte:bit 的位的值
+
+​    仅在支持 CMOS 的平台上可用。
+
+### cmosdump
+
+​    显示 CMOS 原始数据
+
+### cmostest byte:bit
+
+​    测试 CMOS 位于 byte:bit 的值
+
+​    若该位置1，则返回 true (0)，否则为非零。
+
+### cmp FILE1 FILE2
+
+​    比较两文件
+
+​    若两文件大小不同，则分别显示大小。若大小相同但数据不同，则显示第一处不同的位置及数据。若完全相同，则无输出。
+
 ### **commandline**
 
 ​    进入 GRUB 命令行
+
+### configfile FILE
+
+​    加载 GRUB2 配置文件
 
 ### **crc32** FILE [VARIABLE]
 
@@ -132,6 +198,10 @@ layout: default
 - \-\-all, -a 挂载所有设备
 - \-\-boot, -b 挂载所有带"boot"标记的设备
 
+### cutmem FROM[K|M|G] TO[K|M|G]
+
+​    删除指定范围内的所有内存区域
+
 ### date [OPTIONS] [[year-]month-day] [hour:minute[:second]]
 
 ​    显示/设置当前时间
@@ -141,6 +211,10 @@ layout: default
 ### **decrement** VARIABLE
 
 ​    使变量的值减一
+
+### devicetree FILE
+
+​    加载 device tree blob (.dtb)
 
 ### **dd** OPTIONS
 
@@ -157,9 +231,17 @@ layout: default
 - \-\-skip=n 跳过输入的前n个块
 - \-\-seek=n 跳过输出的前n个块
 
+### distrust PUBKEY_ID
+
+​    将 PUBKEY_ID 从信任列表中删除
+
 ### **dp** FILE/DEVICE
 
 ​    输出设备或文件的 UEFI Device Path
+
+### dump ADDR [SIZE]
+
+​    显示内存内容
 
 ### echo [OPTIONS] STRING ...
 
@@ -190,6 +272,14 @@ layout: default
 
 - \-\-nc, -n 仅加载驱动，不进行连接
 
+### eval STRING ...
+
+​    Concatenate arguments together using single space as separator and evaluate result as sequence of GRUB commands.
+
+### exit
+
+​    退出 GRUB
+
 ### export VARIABLE**[=VALUE]** ...
 
 ​    将变量设置为全局环境变量
@@ -201,6 +291,14 @@ layout: default
 ​    **警告：除以零会导致死机或重启等意外情况**
 
 - \-\-set=VARIABLE, -s 将结果保存到变量
+
+### fakebios
+
+​    创建类似 Legacy-BIOS 的结构以兼容现有系统
+
+### false
+
+​    返回假 (false)
 
 ### file OPTIONS FILE
 
@@ -238,6 +336,14 @@ layout: default
 - \-\-is-i386-xnu
 - \-\-is-xnu-hibr
 - \-\-is-x86-bios-bootsector
+
+### fix_video
+
+​    修复图像显示问题
+
+### fwsetup
+
+​    重启进入 UEFI 固件设置
 
 ### **getargs** OPTIONS STRING VARIABLE
 
@@ -278,9 +384,21 @@ layout: default
 
 ​    **警告：使用此命令有可能会造成数据损失**
 
+### gptsync DEVICE [PARTITION[+/-[TYPE]]] ...
+
+​    修改 GPT 分区表硬盘的 MBR 兼容分区表
+
+​    TYPE 为 MBR 分区类型码。"+" 代表激活分区，"-" 代表取消激活分区。
+
+### halt [--no-apm]
+
+​    关闭计算机
+
+​    若加 "\-\-no-apm" 参数，则不执行 APM BIOS 调用。否则，将会使用 APM 关闭计算机。
+
 ### hashsum -h HASH [OPTIONS] [-c FILE [-p PREFIX]] [FILE1 [FILE2 ...]]
 
-​    计算或校验哈希值，若哈希校验成功，则返回0。
+​    计算或校验哈希值，若哈希校验成功，则返回 0。
 
 - \-\-hash=HASH, -h 指定哈希值类型，支持 'adler32’, ‘crc64’, ‘crc32’, ‘crc32rfc1510’, ‘crc24rfc2440’, ‘md4’, ‘md5’, ‘ripemd160’, ‘sha1’, ‘sha224’, ‘sha256’, ‘sha512’, ‘sha384’, ‘tiger192’, ‘tiger’, ‘tiger2’, ‘whirlpool’
 - \-\-check=FILE, -c 指定哈希列表文件(在 UNIX 下使用 md5sum 生成)
@@ -345,6 +463,14 @@ layout: default
 
 - \-\-set=VARIABLE, -s 将数据保存到变量
 
+### initrd FILE ...
+
+​    加载 Linux 初始内存盘，在 linux 之后使用
+
+### initrd16 FILE ...
+
+​    加载 Linux 初始内存盘，在 linux16 之后使用
+
 ### **initrdefi** FILE
 
 ​    加载 Linux 初始内存盘，在 linuxefi 之后使用
@@ -353,9 +479,17 @@ layout: default
 
 ​    从端口读取32比特数值，参数同 "inb"
 
+### insmod MODULE
+
+​    加载 GRUB2 模块
+
 ### inw [OPTIONS] PORT
 
 ​    从端口读取16比特数值，参数同 "inb"
+
+### keymap FILE
+
+​    加载键盘布局
 
 ### keystatus [OPTIONS]
 
@@ -414,9 +548,17 @@ layout: default
 - \-\-file=FILE, -f 指定文件名，默认文件名为 ${prefix}/grubenv
 - \-\-skip-sig, -s 跳过环境文件的签名检查
 
+### list_trusted
+
+​    列出已信任密钥列表
+
 ### load_env [OPTIONS] [VARIABLE ...]
 
-  从环境块文件加载变量，参数同 "list_env"
+​    从环境块文件加载变量，参数同 "list_env"
+
+### loadbios BIOS_DUMP [INT10_DUMP]
+
+​    加载 BIOS 转储
 
 ### loopback [OPTIONS] DEVICE FILE
 
@@ -449,9 +591,21 @@ layout: default
 
 - \-\-iospace, -i 显示 I/O 空间
 
+### lsefi
+
+​    显示 EFI 句柄
+
 ### **lsefienv**
 
 ​    列出所有 EFI 环境变量
+
+### lsefimmap
+
+​    显示 EFI 内存映射
+
+### lsefisystab
+
+​    显示 EFI 系统表
 
 ### **lua** [FILE]
 
@@ -770,6 +924,12 @@ layout: default
 
 ​    用于 if 或 while 语句。
 
+### trust [OPTIONS] PUBKEY_FILE
+
+​    将 PUBKEY 添加到信任密钥列表
+
+- \-\-skip-sig, -s 跳过公钥文件的签名检查
+
 ### **uuid4** VARIABLE
 
 ​    生成 UUID 字符串
@@ -787,6 +947,12 @@ layout: default
 ### **vbootinsmod** FILE
 
 ​    加载 vboot 核心文件 vbootcore.mod
+
+### verify_detached [OPTIONS] FILE SIGNATURE_FILE [PUBKEY_FILE]
+
+​    Verify detached signature.
+
+​    参数同 "trust"
 
 ### **vfat** OPTIONS
 
