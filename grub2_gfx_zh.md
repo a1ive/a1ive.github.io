@@ -116,7 +116,7 @@ bind_direction = left/right
 设置变量 grub_sound_speed 以启用音效。单位是毫秒每音符
 
 ```bash
-export grub_frame_speed=110
+export grub_sound_speed=110
 ```
 
 设置循环播放音效
