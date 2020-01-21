@@ -898,6 +898,124 @@ layout: default
 
 ​    设置终端类型
 
+### test EXPRESSION
+
+​    计算表达式，如果结果为 true，则返回零，否则返回非零状态
+
+​    支持以下表达式
+
+- string1 `==` string2
+
+  the strings are equal
+
+- string1 `!=` string2
+
+  the strings are not equal
+
+- string1 `<` string2
+
+  string1 is lexicographically less than string2
+
+- string1 `<=` string2
+
+  string1 is lexicographically less or equal than string2
+
+- string1 `>` string2
+
+  string1 is lexicographically greater than string2
+
+- string1 `>=` string2
+
+  string1 is lexicographically greater or equal than string2
+
+- integer1 `-eq` integer2
+
+  integer1 is equal to integer2
+
+- integer1 `-ge` integer2
+
+  integer1 is greater than or equal to integer2
+
+- integer1 `-gt` integer2
+
+  integer1 is greater than integer2
+
+- integer1 `-le` integer2
+
+  integer1 is less than or equal to integer2
+
+- integer1 `-lt` integer2
+
+  integer1 is less than integer2
+
+- integer1 `-ne` integer2
+
+  integer1 is not equal to integer2
+
+- prefixinteger1 `-pgt` prefixinteger2
+
+  integer1 is greater than integer2 after stripping off common non-numeric prefix.
+
+- prefixinteger1 `-plt` prefixinteger2
+
+  integer1 is less than integer2 after stripping off common non-numeric prefix.
+
+- file1 `-nt` file2
+
+  file1 is newer than file2 (modification time). Optionally numeric bias may be directly appended to `-nt` in which case it is added to the first file modification time.
+
+- file1 `-ot` file2
+
+  file1 is older than file2 (modification time). Optionally numeric bias may be directly appended to `-ot` in which case it is added to the first file modification time.
+
+- `-d` file
+
+  file exists and is a directory
+
+- `-e` file
+
+  file exists
+
+- `-f` file
+
+  file exists and is not a directory
+
+- `-s` file
+
+  file exists and has a size greater than zero
+
+- `-n` string
+
+  the length of string is nonzero
+
+- string
+
+  string is equivalent to `-n string`
+
+- `-z` string
+
+  the length of string is zero
+
+- `(` expression `)`
+
+  expression is true
+
+- `!` expression
+
+  expression is false
+
+- expression1 `-a` expression2
+
+  both expression1 and expression2 are true
+
+- expression1 expression2
+
+  both expression1 and expression2 are true. This syntax is not POSIX-compliant and is not recommended.
+
+- expression1 `-o` expression2
+
+  either expression1 or expression2 is true
+
 ### testspeed [OPTIONS] FILE
 
 ​    测试文件读取速度
