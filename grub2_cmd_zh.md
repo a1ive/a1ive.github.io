@@ -441,12 +441,6 @@ layout: default
 
 ​    参数同 "menuentry"
 
-### **imgwrite** FILE DEVICE
-
-​    将文件写入磁盘
-
-​    **警告：使用此命令会造成数据损失**
-
 ### inb [OPTIONS] PORT
 
 ​    从端口读取8比特数值
@@ -825,6 +819,14 @@ layout: default
 - -s [bus]:\[slot]\[\.func] 根据其在总线上的位置选择设备
 - -v VARIABLE 将数据保存到变量
 
+### setup_var offset [setval]
+
+​    Read/Write specific (byte) offset of setup variable.
+
+​    **警告：使用此命令会修改 UEFI 环境变量**
+
+​    **警告：使用此命令可能会导致安全方面的问题**
+
 ### sha1sum arg ...
 
 ​    即 "hashsum --hash sha1 arg ..."
@@ -1071,6 +1073,10 @@ layout: default
 ​    Verify detached signature.
 
 ​    参数同 "trust"
+
+### version
+
+​    显示 GRUB 版本信息
 
 ### **vfat** OPTIONS
 
