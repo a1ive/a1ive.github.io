@@ -695,9 +695,11 @@ layout: default
 - -d [vendor]:\[device] 按供应商和设备ID选择设备
 - -s [bus]:\[slot]\[\.func] 根据其在总线上的位置选择设备
 
-### **peinfo** FILE
+### play FILE | TEMPO [PITCH1 DURATION1] [PITCH2 DURATION2] ...
 
-​    查看 PE (Portable Executable) 文件头
+​    使用 PC Speaker 播放曲调
+
+​    若参数是文件，则播放文件记录的曲调。
 
 ### **pop_env** VARIABLE ...
 
@@ -733,6 +735,10 @@ layout: default
 ​    Also, if you specify a reserved or unimplemented MSR address, it will cause a general protection exception (which is not currently being handled) and the system will reboot.
 
 - -v VARIABLE 将数值保存到变量
+
+### read [VARIABLE]
+
+​    读取一行用户输入
 
 ### read_byte [OPTIONS] ADDR
 
