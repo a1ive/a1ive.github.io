@@ -684,7 +684,7 @@ layout: default
 
 - \-\-active, -a 激活该分区
 - \-\-file=FILE, -f 将文件作为分区内容使用
-- \-\-type=HEX, -t 指定分区类型，0x00为自动，0x10为自动隐藏
+- \-\-type=HEX, -t 指定分区类型
 - \-\-start=n, -s 指定开始地址(单位为扇区)
 - \-\-length=n, -l 指定长度(单位为扇区)
 
