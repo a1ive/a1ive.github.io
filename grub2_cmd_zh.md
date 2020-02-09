@@ -884,6 +884,16 @@ layout: default
 - \-\-get-uuid=OFFSET, -u Get the UUID's value at the given offset.
 - \-\-set=VARIABLE 将数据保存到变量
 
+### **stat** [OPTIONS] FILE
+
+​    显示文件和文件系统信息
+
+- \-\-set=VARIABLE, -s 将返回值设为变量
+- \-\-size, -z 显示文件大小
+- \-\-human, -m 以可读方式显示文件大小
+- \-\-offset, -o 显示文件在磁盘上的偏移量
+- \-\-fs, -f 显示文件系统信息
+
 ### **strconv** [OPTIONS] STRING
 
 ​    字符串 UTF-8/GBK 编码转换
