@@ -28,6 +28,7 @@ layout: default
 - \-\-no-ebda, -e 不更新 EBDA。可以防止部分 BIOS 死机，对无法从 GRUB 接收 RSDP 的 OS 无效。
 - **\-\-slic, -s 作为 SLIC 加载，自动修改 OEMID 和 OEMTABLE ID。**
 - **\-\-msdm 显示/加载 MSDM 表**
+- **\-\-bgrt 将 BMP 文件作为启动 Logo**
 
 ### appleloader CMDLINE
 
@@ -893,6 +894,8 @@ layout: default
 - \-\-human, -m 以可读方式显示文件大小
 - \-\-offset, -o 显示文件在磁盘上的偏移量
 - \-\-fs, -f 显示文件系统信息
+- \-\-contig, -c 检测文件是否连续
+- \-\-quiet, -q 不显示输出
 
 ### **strconv** [OPTIONS] STRING
 
