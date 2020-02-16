@@ -1136,6 +1136,21 @@ layout: default
 - \-\-delete, -d 删除虚拟盘
 - \-\-partitions -p 模拟带分区的硬盘
 
+### videoinfo [WxH[xD]]
+
+​    列出可用显示模式
+
+### vbeinfo [WxH[xD]]
+
+​    同 'videoinfo'
+
+### **videomode [OPTIONS] VARIABLE**
+
+​    获取当前/可用的显示模式，保存到变量
+
+- \-\-list, -l 列出可用的显示模式
+- \-\-current, -c 获取当前显示模式
+
 ### **wimboot** [OPTIONS] @:NAME:FILE
 
 ​    启动 WIM 文件
