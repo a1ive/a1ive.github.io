@@ -10,7 +10,7 @@ layout: default
 
   [简体中文](https://a1ive.github.io/grub2-filemanager/)
 
-  Download: [GitHub Releases](https://github.com/a1ive/grub2-filemanager/releases) [BugKiller](http://github-mirror.bugkiller.org/a1ive/grub2-filemanager)
+  Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) [BugKiller](http://github-mirror.bugkiller.org/a1ive/grub2-filemanager/releases)
 
   若下载速度慢，建议使用 [offcloud](https://offcloud.com/) 下载
 
@@ -24,7 +24,7 @@ layout: default
 
   Fork of GRUB 2 to add various features. 
 
-  Download: [GitHub Releases](https://github.com/a1ive/grub/releases/tag/latest) [Bugkiller](http://github-mirror.bugkiller.org/a1ive/grub/releases)
+  Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) [Bugkiller](http://github-mirror.bugkiller.org/a1ive/grub/releases)
 
   若下载速度慢，建议使用 [offcloud](https://offcloud.com/) 下载
 
