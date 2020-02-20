@@ -240,6 +240,14 @@ layout: default
 
 ​    输出设备或文件的 UEFI Device Path
 
+### drivemap [OPTIONS] FROM_DEVICE TO_DEVICE
+
+​    交换 BIOS 磁盘顺序
+
+- \-\-list, -l 列出当前磁盘映射
+- \-\-reset, -r 重置所有映射到默认值
+- \-\-swap, -s 执行磁盘映射
+
 ### dump ADDR [SIZE]
 
 ​    显示内存内容
@@ -616,6 +624,7 @@ layout: default
 - \-\-disk, -d 仿真整个磁盘
 - \-\-rw, -w 允许写入虚拟盘，仅对内存盘有效
 - \-\-nb, -n 不启动此虚拟盘
+- \-\-update, -u 刷新 GRUB2 磁盘列表
 
 ### md5sum arg ...
 
