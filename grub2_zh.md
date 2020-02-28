@@ -7,3 +7,7 @@ layout: default
 ## [命令列表](./grub2_cmd_zh.html)
 ## [变量](./grub2_var_zh.html)
 ## [动态主题](./grub2_gfx_zh.html)
+
+## [Lua](./grub2_lua_zh.html)
+
+## [FatFs](./grub2_fatfs_zh.html)
