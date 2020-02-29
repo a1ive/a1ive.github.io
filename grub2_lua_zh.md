@@ -114,54 +114,105 @@ layout: default
 
   获取文件指定位置的十六进制数据。
 
-- grub.add_menu
+- grub.add_menu (`string` source, `string` title[, ...])
 
-- grub.add_icon_menu
+  添加菜单项，菜单内容为 "source"，标题为 "title"。
 
-- grub.add_hidden_menu
+- grub.add_icon_menu (`string` icon, `string` source, `string` title[, ...])
 
-- grub.clear_menu
+  添加带图标 (--class) 的菜单项。
 
-- grub.read_byte
+- grub.add_hidden_menu (`string` hotkey, `string` source, `string` title[, ...])
 
-- grub.read_word
+  添加隐藏菜单项，热键为 "hotkey"。
 
-- grub.read_dword
+- grub.clear_menu (`nil`)
 
-- grub.write_byte
+  清空菜单。
 
-- grub.write_word
+- `integer` value = grub.read_byte (`integer` addr)
 
-- grub.write_dword
+  从内存地址读取一个字节数据。
 
-- grub.cls
+- `integer` value = grub.read_word (`integer` addr)
 
-- grub.setcolorstate
+  从内存地址读取双字节数据。
 
-- grub.refresh
+- `integer` value = grub.read_dword (`integer` addr)
 
-- grub.read
+  从内存地址读取双字数据。
 
-- grub.gettext
+- grub.write_byte (`integer` addr, `integer` value)
 
-- grub.get_time_ms
+  向内存地址写入一个字节数据。
 
-- grub.random
+- grub.write_word (`integer` addr, `integer` value)
 
-- grub.disk_getsize
+  向内存地址写入双字节数据。
+
+- grub.write_dword (`integer` addr, `integer` value)
+
+  向内存地址写入双字数据。
+
+- grub.cls (`nil`)
+
+  清屏。
+
+- grub.setcolorstate (`integer` state)
+
+- grub.refresh (`nil`)
+
+  执行 `grub_refresh` 函数
+
+- `string` line = grub.read (`nil`)
+
+  等待用户输入一行字符串。
+
+- `string` text = grub.gettext (`string` src)
+
+  翻译字符串。
+
+- `integer` time = grub.get_time_ms (`nil`)
+
+  获取 CPU 时间，单位为 毫秒。
+
+- `integer` rand = grub.random (`integer` m)
+
+  返回一个小于 “m” 的随机数。
+
+- `integer` size = grub.disk_getsize (`string` diskname)
+
+  返回磁盘大小。
 
 ### input 函数库
 
-- input.getkey
-- input.getkey_noblock
-- input.read
+- `integer` ascii_code, `integer` scan_code = input.getkey (`nil`)
+
+  等待用户按键，返回 ASCII 码和扫描码。
+
+- `integer` ascii_code, `integer` scan_code = input.getkey_noblock (`nil`)
+
+  返回 ASCII 码和扫描码 (在循环中使用)。
+
+- `string` line = input.read (`nil`)
+
+  等待用户输入一行字符串。
 
 ### video 函数库
 
-- video.swap_buffers
-- video.fill_rect
-- video.draw_string
-- video.info
+- video.swap_buffers (`nil`)
+
+- video.fill_rect (`table`{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y, `integer` width, `integer` height)
+
+  在指定位置绘制矩形。
+
+- video.draw_string (`string` text, `string` font, `table`{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y)
+
+  在指定位置显示字符串。
+
+- `string` video_mode = video.info (`nil`)
+
+  获取图像模式列表。
 
 ### gbk 函数库
 
