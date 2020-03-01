@@ -216,8 +216,18 @@ layout: default
 
 ### gbk 函数库
 
-- gbk.len
+- gbk.len (`string` str)
+
+  返回 GBK 编码字符串的长度。
+
 - gbk.byte
+
 - gbk.char
-- gbk.fromutf8
-- gbk.toutf8
+
+- gbk.fromutf8 (`string` utf8_str)
+
+  将 UTF-8 字符串转换为 GBK 编码字符串。
+
+- gbk.toutf8 (`string` gbk_str)
+
+  将 GBK 编码字符串转换为 UTF-8 字符串。
