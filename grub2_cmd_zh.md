@@ -654,14 +654,6 @@ layout: default
 - esc 退出键
 - f1~f12 功能键
 
-### **moksbset**
-
-​    暂时禁用 shim 安全验证，需要重新启动
-
-​    **警告：使用此命令会修改 UEFI 环境变量**
-
-​    **警告：使用此命令可能会导致安全方面的问题**
-
 ### **ntboot** [OPTIONS] FILE
 
 ​    启动 NT6+ VHD/VHDX/WIM
@@ -746,7 +738,7 @@ layout: default
 
 - -v VARIABLE 将数值保存到变量
 
-### read [VARIABLE]
+### read [VARIABLE] **[hide | asterisk]**
 
 ​    读取一行用户输入
 
