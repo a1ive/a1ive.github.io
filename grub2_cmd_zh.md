@@ -610,9 +610,14 @@ layout: default
 
 ​    显示 EFI 系统表
 
-### **lua** [FILE]
+### **lua** [OPTIONS] [FILE]
 
 ​    执行 Lua 脚本
+
+- \-\-execute, -e 执行单行 Lua 语句
+- \-\-load=NAME, -l 加载库
+- \-\-interactive, -i 进入交互模式
+- \-\-version, -v 显示版本信息
 
 ### map [OPTIONS] FILE
 
