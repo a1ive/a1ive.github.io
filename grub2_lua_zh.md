@@ -38,13 +38,13 @@ layout: default
 
   设置 GRUB 全局环境变量的值。第一个参数为变量名，第二个参数可选，为变量内容。
 
-- grub.enum_device (`function` (`string` device[, `string` fs, `string` uuid, `string` label]))
+- grub.enum_device (`function` (`string` device[, `string` fs, `string` uuid, `string` label, `string` size]))
 
   枚举 GRUB 的磁盘设备。
 
   参数为枚举执行的函数，可获取设备名，文件系统，UUID 和卷标。
 
-- grub.enum_file (`function` (`string` filename))
+- grub.enum_file (`function` (`string` filename[, `int` isdir]))
 
   枚举某目录下的文件和文件夹 (包括 `.` 和 `..`)
 
