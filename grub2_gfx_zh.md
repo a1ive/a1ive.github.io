@@ -8,6 +8,10 @@ layout: default
 
 GRUB 支持 PFF2 字体格式。可以用 `lsfonts` 命令列出可用字体，用 `loadfonts` 命令加载字体。
 
+### 图片
+
+GRUB 支持 bmp, jpg, jpeg, png, tga 格式的图片。
+
 ### 颜色
 
 支持以下格式的颜色：
@@ -220,11 +224,11 @@ GRUB 支持 PFF2 字体格式。可以用 `lsfonts` 命令列出可用字体，�
 
 - ticks_disappear
 
-  Boolean value indicating whether tick marks should progressively appear, or progressively disappear as *value* approaches *end*. Specify “true“ or “false“. Default is “false“.
+  设置当进度到达时刻度是否消失，选项为 "true" 或 "false" (默认)。
 
 - start_angle
 
-  The position of the first tick mark to appear or disappear. Measured in "parrots", 1 "parrot" = 1 / 256 of the full circle. Use values “xxx deg“ or “xxx \xc2\xb0“ to set the angle in degrees.
+  设置第一个刻度标记的位置，单位为圆的 1/256。使用 "xxx deg" 或 "xxx \xc2\xb0" 可以按角度设置位置。
 
 #### boot_menu
 
