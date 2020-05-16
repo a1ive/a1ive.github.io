@@ -184,6 +184,22 @@ layout: default
 
   返回磁盘大小。
 
+- grub.enum_block (`function` (`string` block)[, `int` part_start])
+
+  枚举文件的块列表，形式为 sector+size。若存在 `part_start` 参数，则扇区号基于分区起始扇区计算。
+
+- `userdata` grub.ini_load (`string` filename)
+
+  加载 ini 配置文件。
+
+- grub.ini_free (`userdata` ini)
+
+  释放 ini 配置文件。
+
+- `string` grub.ini_get (`userdata` ini, [`string` section, ] `string` key)
+
+  从 ini 中读取配置项。
+
 ### input 函数库
 
 - `integer` ascii_code, `integer` scan_code = input.getkey (`nil`)
@@ -202,17 +218,45 @@ layout: default
 
 - video.swap_buffers (`nil`)
 
-- video.fill_rect (`table`{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y, `integer` width, `integer` height)
+- video.fill_rect (`table` color{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y, `integer` w, `integer` h)
 
   在指定位置绘制矩形。
 
-- video.draw_string (`string` text, `string` font, `table`{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y)
+- video.draw_string (`string` text, `string` font, `table` color{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y)
 
   在指定位置显示字符串。
 
 - `string` video_mode = video.info (`nil`)
 
   获取图像模式列表。
+
+- video.draw_pixel (`table` color{`integer` r, `integer` g, `integer` b, `integer` a}, `integer` x, `integer` y)
+
+  在指定位置画一个像素点。
+
+- `integer` x, `integer` y = video.get_info (`nil`)
+
+  获取当前显示模式的宽度和高度。
+
+- `userdata` bitmap = video.bitmap_load (`string` filename)
+
+  加载图像文件 (支持 bmp, jpg, jpeg, png, tga)。
+
+- video.bitmap_close (`userdata` bitmap)
+
+  关闭图像文件。
+
+- `integer` x, `integer` y = video.bitmap_info (`userdata` bitmap)
+
+  获取图像的宽度和高度。
+
+- video.bitmap_blit (`userdata` bitmap, `integer` x, `integer` y, `integer` offset_x, `integer` offset_y, `integer` w, `integer` h)
+
+  在指定位置显示图像。
+
+- `userdata` scaled_bitmap = video.bitmap_rescale (`userdata` bitmap, `integer` w, `integer` h)
+
+  缩放指定图像。
 
 ### gbk 函数库
 
@@ -231,3 +275,23 @@ layout: default
 - gbk.toutf8 (`string` gbk_str)
 
   将 GBK 编码字符串转换为 UTF-8 字符串。
+
+### fatfs 函数库
+
+- fatfs.mount
+- fatfs.umount
+- fatfs.disk_status
+- fatfs.get_label
+- fatfs.set_label
+- fatfs.mkdir
+- fatfs.rename
+- fatfs.unlink
+- fatfs.open
+- fatfs.close
+- fatfs.read
+- fatfs.write
+- fatfs.lseek
+- fatfs.tell
+- fatfs.eof
+- fatfs.size
+- fatfs.truncate

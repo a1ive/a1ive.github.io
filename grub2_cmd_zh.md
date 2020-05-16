@@ -68,9 +68,12 @@ layout: default
 
 ​    语法与 Memtest86+ 提供的语法相同：地址/掩码对的列表。 给定一个页面对齐地址和一个基地址/掩码对，如果掩码启用的页面对齐地址的所有位都与基地址匹配，则意味着该页面将被过滤。
 
-### blocklist FILE
+### blocklist **[OPTIONS]** FILE
 
 ​    打印文件的块列表
+
+- \-\-set=VAR, -s 保存到变量
+- \-\-disk, -d 基于磁盘而不是分区计算起始扇区
 
 ### **blscfg** FILE
 
@@ -142,11 +145,13 @@ layout: default
 
 ​    清屏
 
+​    注意：使用本命令前需要 `unset debug`
+
 ### **clear_menu**
 
 ​    清空当前菜单
 
-​    **警告：使用本命令前请务必禁用ESC export grub_disable_esc=1**
+​    **警告：使用本命令前请务必禁用ESC `export grub_disable_esc=1`**
 
 ### cmosclean byte:bit
 
@@ -262,6 +267,8 @@ layout: default
 
 ​    \n -- 换行 \r -- 回车 \t -- 水平制表符 \v -- 垂直制表符
 
+​    \e0xBF \-\- 设置字符颜色
+
 - -n 不自动换行
 - -e 启用反斜杠转义解析
 
@@ -346,9 +353,21 @@ layout: default
 - \-\-is-xnu-hibr
 - \-\-is-x86-bios-bootsector
 
+### fixmmap
+
+​    修复部分电脑上启动 Windows 时出现的  "BlInitializeLibrary failed 0xc000009a" 错误
+
 ### fix_video
 
 ​    修复图像显示问题
+
+### **fucksb** [OPTIONS]
+
+​    在 bootloader 阶段隐藏固件安全启动状态。若无参数，则返回是否启用此功能，启用则返回 1。
+
+- \-\-install, -i 启用伪装功能
+- \-\-on, -y 将安全启动状态伪装为开启
+- \-\-off, -n 将安全启动状态伪装为关闭
 
 ### fwsetup
 
@@ -630,6 +649,7 @@ layout: default
 - \-\-rw, -w 允许写入虚拟盘，仅对内存盘有效
 - \-\-nb, -n 不启动此虚拟盘
 - \-\-update, -u 刷新 GRUB2 磁盘列表
+- \-\-unmap=DISK, -x 屏蔽某磁盘
 
 ### md5sum arg ...
 
@@ -658,6 +678,26 @@ layout: default
 - insert 插入键
 - esc 退出键
 - f1~f12 功能键
+
+### **nes** FILE [PIXEL_SIZE WAIT_KEY_TIME]
+
+​    NES 模拟器
+
+### normal [FILE]
+
+​    进入 normal 模式并显示 GRUB 菜单
+
+​    在 normal 模式下，命令，文件系统模块和加密模块将自动加载，并且可以使用完整的 GRUB 脚本解析器。 其他模块可以使用 insmod 显式地加载。
+
+​    如果给出了文件，则将从该文件读取命令。 否则，将从 $prefix/grub.cfg 中读取它们（如果存在）。
+
+​    可以从 normal 模式内再次调用 normal，从而创建嵌套环境。 为此，通常使用configfile。
+
+### normal_exit
+
+​    退出 normal 模式
+
+​    若此 normal 实例未嵌套在另一个实例中，则返回 rescue 模式。
 
 ### **ntboot** [OPTIONS] FILE
 
@@ -691,9 +731,36 @@ layout: default
 
 - \-\-active, -a 激活该分区
 - \-\-file=FILE, -f 将文件作为分区内容使用
-- \-\-type=HEX, -t 指定分区类型
+- \-\-type=HEX, -t 指定分区类型，0x00 为自动检测分区类型 (支持 FAT, exFAT, NTFS, EXT)，0x10 为自动检测并设为隐藏分区。
 - \-\-start=n, -s 指定开始地址(单位为扇区)
 - \-\-length=n, -l 指定长度(单位为扇区)
+
+### parttool PARTITION COMMANDS
+
+​    修改分区表 (目前只支持 mbr 分区表)
+
+​    **警告：使用此命令有可能会造成数据损失**
+
+​    Each command is either a boolean option, in which case it must be followed with ‘+’ or ‘-’ (with no intervening space) to enable or disable that option, or else it takes a value in the form ‘command=value’.
+
+可用选项：
+
+- boot (boolean)
+  When enabled, this makes the selected partition be the active (bootable) partition on its disk, clearing the active flag on all other partitions. This command is limited to primary partitions.
+
+- type (value)
+  Change the type of an existing partition. The value must be a number in the range 0-0xFF (prefix with ‘0x’ to enter it in hexadecimal).
+
+- hidden (boolean)
+  When enabled, this hides the selected partition by setting the hidden bit in its partition type code; when disabled, unhides the selected partition by clearing this bit. This is useful only when booting DOS or Windows and multiple primary FAT partitions exist in one disk. See also DOS/Windows.
+
+### password USER clear-password
+
+​    Define a user named user with password clear-password.
+
+### password_pbkdf2 USER hashed-password
+
+​    Define a user named user with password hash hashed-password. Use grub-mkpasswd-pbkdf2 to generate password hashes.
 
 ### pcidump OPTIONS
 
@@ -765,6 +832,10 @@ layout: default
 
 ​    从 ADDR 读取16比特数值，参数同 "read_byte"
 
+### reboot
+
+​    重启计算机
+
 ### regexp [OPTIONS] 'REGEXP' "STRING"
 
 ​    测试正则表达式 REGEXP 是否匹配字符串 STRING
@@ -775,13 +846,17 @@ layout: default
 
 - \-\-set=[NUMBER:]\[VARIABLE], -s 将第 n 个匹配字符串保存到变量中
 
+### reset
+
+​    重启计算机 (同 "reboot")
+
 ### save_env [OPTIONS] VARIABLE ...
 
 ​    将变量从 GRUB 环境保存到环境块文件，参数同 "load_env"
 
 ### **sbpolicy** [OPTIONS]
 
-​    安装绕过安全启动的安全策略
+​    安装绕过安全启动的安全策略。启用此功能，可以在安全启动开启的情况下加载未签名的 EFI 程序。
 
 ​    **警告：使用此命令可能会导致安全方面的问题**
 
@@ -823,6 +898,17 @@ layout: default
 
 - \-\-guid=GUID, -g 设置要写入变量的 GUID，默认为全局变量
 - \-\-type=string/uint8/hex, -t 指定变量类型为字符串/8比特无符号整数/十六进制数据，默认为十六进制数据
+
+### **setkey** OPTIONS NEW_KEY USA_KEY
+
+​    将美式键盘的某个按键 (USA_KEY) 映射为另一个按键 (NEW_KEY)
+
+​    最多同时支持 255 组映射关系。
+
+- \-\-reset, -r 重置映射关系
+- \-\-enable, -e 启用按键映射
+- \-\-disable, -d 禁用按键映射
+- \-\-status, -s 显示当前键盘映射
 
 ### setpci [OPTIONS] REGISTER[=VALUE[:MASK]]
 
@@ -900,6 +986,7 @@ layout: default
 - \-\-human, -m 以可读方式显示文件大小
 - \-\-offset, -o 显示文件在磁盘上的偏移量
 - \-\-fs, -f 显示文件系统信息
+- \-\-ram, -r 以 MiB 为单位显示内存大小
 - \-\-contig, -c 检测文件是否连续
 - \-\-quiet, -q 不显示输出
 
@@ -1051,7 +1138,7 @@ layout: default
 
 ### **tetris**
 
-​    俄罗斯方块游戏。请先执行 terminal_output console
+​    俄罗斯方块游戏。请先执行 `terminal_output console`。
 
 ### tr [OPTIONS] [SET1] [SET2] [STRING]
 

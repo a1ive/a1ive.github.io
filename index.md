@@ -10,9 +10,9 @@ layout: default
 
   [简体中文](https://a1ive.github.io/grub2-filemanager/)
 
-  Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) [Gitee](https://gitee.com/a1ive/grub2-filemanager/releases) [BugKiller](http://github-mirror.bugkiller.org/a1ive/grub2-filemanager/releases)
+  Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) [Gitee](https://gitee.com/a1ive/grub2-filemanager/releases) 中国大陆用户可用 GitHub [代下载服务](https://g.widora.cn/) 
 
-  Help to translate: [Crowdin](https://crowdin.com/project/grub2-filemanager)
+  Help to translate: [Crowdin](https://crowdin.com/project/grub2-filemanager) 
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub2-filemanager)
 
@@ -22,11 +22,11 @@ layout: default
 
   Fork of GRUB 2 to add various features. 
 
-  Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) [Bugkiller](http://github-mirror.bugkiller.org/a1ive/grub/releases)
+  Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) 中国大陆用户可用 GitHub [代下载服务](https://g.widora.cn/) 
 
-  Manual: [简体中文](./grub2_zh.html)
+  Manual: [简体中文](./grub2_zh.html) 
 
-  Extra modules: [grub-extras](https://github.com/a1ive/grub-extras)
+  Extra modules: [grub-extras](https://github.com/a1ive/grub-extras) 
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub)
 
