@@ -638,17 +638,16 @@ layout: default
 - \-\-interactive, -i 进入交互模式
 - \-\-version, -v 显示版本信息
 
-### map [OPTIONS] FILE
+### map [OPTIONS] FILE [DEVICE]
 
-​    创建 UEFI 虚拟盘并启动
+​    创建 UEFI 虚拟盘
 
 - \-\-mem, -m 加载到内存
-- \-\-pause, -p 启动前暂停以查看信息
+- \-\-rt 指定内存盘使用 `RUNTIME_SERVICES_DATA` 类型内存
+- \-\-blocklist, -l 转换为 blocklist 类型磁盘，这将加快虚拟盘读取速度并启用写入功能
 - \-\-type=CD/HD/FD, -t 指定磁盘类型为光盘/硬盘/软盘
-- \-\-disk, -d 仿真整个磁盘
-- \-\-rw, -w 允许写入虚拟盘，仅对内存盘有效
+- \-\-ro, -o 禁止写入虚拟盘
 - \-\-nb, -n 不启动此虚拟盘
-- \-\-update, -u 刷新 GRUB2 磁盘列表
 - \-\-unmap=DISK, -x 屏蔽某磁盘
 
 ### md5sum arg ...
