@@ -90,26 +90,6 @@ layout: default
 
   判断文件是否存在。
 
-- grub.file_crc32 (`string` filename)
-
-  返回文件的 CRC32 校验值。
-
-- `userdata` disk = grub.disk_open (`string` diskname)
-
-  打开磁盘，返回值为 `userdata` 类型的磁盘句柄。
-
-- grub.disk_close (`userdata` disk)
-
-  关闭磁盘。
-
-- `string` buf = grub.disk_read (`userdata` disk, `integer` sector, `integer` offset, `integer` length)
-
-  读取磁盘指定扇区/偏移的数据，返回字符串。
-
-- grub.disk_write (`userdata` disk, `integer` sector, `integer` offset, `integer` length, `string` buf)
-
-  写入磁盘。
-
 - `string` buf, `string` hex = grub.hexdump (`userdata` file, `integer` skip, `integer` length) 
 
   获取文件指定位置的十六进制数据。
@@ -130,30 +110,6 @@ layout: default
 
   清空菜单。
 
-- `integer` value = grub.read_byte (`integer` addr)
-
-  从内存地址读取一个字节数据。
-
-- `integer` value = grub.read_word (`integer` addr)
-
-  从内存地址读取双字节数据。
-
-- `integer` value = grub.read_dword (`integer` addr)
-
-  从内存地址读取双字数据。
-
-- grub.write_byte (`integer` addr, `integer` value)
-
-  向内存地址写入一个字节数据。
-
-- grub.write_word (`integer` addr, `integer` value)
-
-  向内存地址写入双字节数据。
-
-- grub.write_dword (`integer` addr, `integer` value)
-
-  向内存地址写入双字数据。
-
 - grub.cls (`nil`)
 
   清屏。
@@ -164,39 +120,29 @@ layout: default
 
   执行 `grub_refresh` 函数
 
-- `string` line = grub.read (`nil`)
-
-  等待用户输入一行字符串。
-
 - `string` text = grub.gettext (`string` src)
 
   翻译字符串。
-
-- `integer` time = grub.get_time_ms (`nil`)
-
-  获取 CPU 时间，单位为 毫秒。
 
 - `integer` rand = grub.random (`integer` m)
 
   返回一个小于 “m” 的随机数。
 
-- `integer` size = grub.disk_getsize (`string` diskname)
-
-  返回磁盘大小。
-
 - grub.enum_block (`function` (`string` block)[, `int` part_start])
 
   枚举文件的块列表，形式为 sector+size。若存在 `part_start` 参数，则扇区号基于分区起始扇区计算。
 
-- `userdata` grub.ini_load (`string` filename)
+### ini 函数库
+
+- `userdata` inifile = ini.load (`string` filename)
 
   加载 ini 配置文件。
 
-- grub.ini_free (`userdata` ini)
+- ini.free (`userdata` inifile)
 
   释放 ini 配置文件。
 
-- `string` grub.ini_get (`userdata` ini, [`string` section, ] `string` key)
+- `string` ini.get (`userdata` inifile, [`string` section, ] `string` key)
 
   从 ini 中读取配置项。
 
@@ -260,38 +206,106 @@ layout: default
 
 ### gbk 函数库
 
-- gbk.len (`string` str)
-
-  返回 GBK 编码字符串的长度。
-
-- gbk.byte
-
-- gbk.char
-
-- gbk.fromutf8 (`string` utf8_str)
+- `string` gbk_str = gbk.fromutf8 (`string` utf8_str)
 
   将 UTF-8 字符串转换为 GBK 编码字符串。
 
-- gbk.toutf8 (`string` gbk_str)
+- `string` utf8_str = gbk.toutf8 (`string` gbk_str)
 
   将 GBK 编码字符串转换为 UTF-8 字符串。
 
+- `string` utf8_simp = gbk.tosimp (`string` utf8_trad)
+
+  将 UTF-8 繁体中文字符串转换为 UTF-8 简体中文字符串。
+
+### disk 函数库
+
+- `userdata` dev = disk.open (`string` diskname)
+
+  打开磁盘，返回值为 `userdata` 类型的磁盘句柄。
+
+- disk.close (`userdata` dev)
+
+  关闭磁盘。
+
+- `string` buf = disk.read (`userdata` dev, `integer` sector, `integer` offset, `integer` length)
+
+  读取磁盘指定扇区/偏移的数据，返回字符串。
+
+- disk.write (`userdata` dev, `integer` sector, `integer` offset, `integer` length, `string` buf)
+
+  写入磁盘。
+
+- `string` partmap = disk.partmap (`userdata` dev)
+
+  获取分区表名称。
+
+- `string` driver = disk.driver (`userdata` dev)
+
+  获取磁盘驱动名。
+
+- `string` fs = disk.fs (`userdata` dev)
+
+  获取文件系统名。
+
+- `string` uuid = disk.fsuuid (`userdata` dev)
+
+  获取文件系统 UUID。
+
+- `string` label = disk.label (`userdata` dev)
+
+  获取磁盘卷标。
+
+- `string` size = disk.size (`userdata` dev[, flag])
+
+  获取磁盘大小。
+
+- `boolean` boot = disk.bootable (`userdata` dev)
+
+  判断分区是否有可启动标识。
+
 ### fatfs 函数库
 
-- fatfs.mount
-- fatfs.umount
-- fatfs.disk_status
-- fatfs.get_label
-- fatfs.set_label
-- fatfs.mkdir
-- fatfs.rename
-- fatfs.unlink
-- fatfs.open
-- fatfs.close
-- fatfs.read
-- fatfs.write
-- fatfs.lseek
-- fatfs.tell
-- fatfs.eof
-- fatfs.size
-- fatfs.truncate
+- fat.mount
+- fat.umount
+- fat.disk_status
+- fat.get_label
+- fat.set_label
+- fat.mkdir
+- fat.rename
+- fat.unlink
+- fat.open
+- fat.close
+- fat.read
+- fat.write
+- fat.lseek
+- fat.tell
+- fat.eof
+- fat.size
+- fat.truncate
+
+### memrw 函数库
+
+- `integer` value = memrw.read_byte (`integer` addr)
+
+  从内存地址读取一个字节数据。
+
+- `integer` value = memrw.read_word (`integer` addr)
+
+  从内存地址读取双字节数据。
+
+- `integer` value = memrw.read_dword (`integer` addr)
+
+  从内存地址读取双字数据。
+
+- memrw.write_byte (`integer` addr, `integer` value)
+
+  向内存地址写入一个字节数据。
+
+- memrw.write_word (`integer` addr, `integer` value)
+
+  向内存地址写入双字节数据。
+
+- memrw.write_dword (`integer` addr, `integer` value)
+
+  向内存地址写入双字数据。
