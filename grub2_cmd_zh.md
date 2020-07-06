@@ -789,7 +789,7 @@ layout: default
 - \-\-fs-uuid, -u 检测文件系统 UUID
 - \-\-label, -l 检测文件系统卷标
 - \-\-partuuid, -g 检测分区 UUID (GPT分区表)
-- **\-\-bootable, -b 检测是否激活 (msdos分区表)**
+- **\-\-bootable, -b 检测是否含有可启动标识**
 - **\-\-quiet, -q 不显示报错**
 
 ### **rand** [OPTIONS] VARIABLE
@@ -1253,6 +1253,14 @@ layout: default
 - \-\-index=n, -i 指定要启动的WIM卷号
 - \-\-pause, -p 启动前暂停
 - \-\-inject=WIN32_PATH, -j 指定射入文件夹，默认为 \Windows\Syatem32
+
+### **wimtools OPTIONS FILE [WIN32_PATH]**
+
+​    WIM 解析工具
+
+- \-\-index=n, i 指定 WIM 卷号
+- \-\-exist, -e 检测文件是否存在
+- \-\-is64, -a 检测 WIM 内部系统是否为 64 位 (x86_64)
 
 ### **write_bytes** ADDR VALUE ...
 
