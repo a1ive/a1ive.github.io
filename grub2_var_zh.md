@@ -57,10 +57,6 @@ GRUB 支持类似 Unix 的环境变量。其中一些变量对 GRUB 来说有特
 
 若启动过程中出现问题，请尝试设为 "text"。
 
-#### grub_cmdline
-
-从上一级 UEFI bootloader 接收到的命令行。
-
 #### grub_cpu
 
 GRUB 构建时选择的 CPU 类型， 如 "i386", "x86_64" 等。
