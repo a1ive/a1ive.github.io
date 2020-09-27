@@ -61,13 +61,29 @@ GRUB 支持类似 Unix 的环境变量。其中一些变量对 GRUB 来说有特
 
 GRUB 构建时选择的 CPU 类型， 如 "i386", "x86_64" 等。
 
+#### grub_disable_console
+
+设置是否禁用按 `C` 键进入 GRUB 控制台。
+
+#### grub_disable_edit
+
+设置是否禁止按`E` 键编辑菜单项。
+
 #### grub_disable_esc
 
-设置是否禁用 ESC 按键返回上一级菜单。默认值为 0，允许按 ESC 返回。
+设置是否禁用 `ESC` 按键返回上一级菜单。默认值为 0，允许按 ESC 返回。
 
 #### grub_draw_border
 
-设置是否绘制菜单边框。值为1，则绘制菜单边框。
+设置是否绘制菜单边框。值为 1，则绘制菜单边框。
+
+#### grub_enable_menu_hotkey
+
+设置是否在菜单条目上显示菜单的快捷键。
+
+#### grub_enable_menu_jump
+
+设置是否启用按 `A~Z` 键跳转到对应首字母的下一个菜单项。
 
 #### grub_frame_speed
 
@@ -78,6 +94,10 @@ GRUB 构建时选择的 CPU 类型， 如 "i386", "x86_64" 等。
 #### grub_fs_case_sensitive
 
 设置文件名是否区分大小写。值为1，则文件名大小写敏感。
+
+#### grub_normal_menu_title
+
+指定无主题情况下菜单标题的文本内容
 
 #### grub_platform
 
