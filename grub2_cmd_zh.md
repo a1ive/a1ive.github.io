@@ -292,7 +292,7 @@ layout: default
 
 ### eval STRING ...
 
-​    Concatenate arguments together using single space as separator and evaluate result as sequence of GRUB commands.
+​    将参数用单个空格作为分隔符连接在一起，并将结果作为 GRUB 命令序列执行。
 
 ### exit
 
@@ -679,6 +679,7 @@ layout: default
 - insert 插入键
 - esc 退出键
 - f1~f12 功能键
+- 也可以使用十六进制数字形式的按键码，例如 `0x46`
 
 ### **nes** FILE [PIXEL_SIZE WAIT_KEY_TIME]
 
