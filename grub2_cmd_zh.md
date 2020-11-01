@@ -30,6 +30,10 @@ layout: default
 - **\-\-msdm 显示/加载 MSDM 表**
 - **\-\-bgrt 将 BMP 文件作为启动 Logo**
 
+### **alias NAME COMMAND [SUMMARY]**
+
+​    设置别名
+
 ### appleloader CMDLINE
 
 ​    Apple legacy boot loader.
@@ -290,6 +294,10 @@ layout: default
 
 - \-\-nc, -n 仅加载驱动，不进行连接
 
+### **efiusb DEVICE**
+
+​    打印 USB 信息
+
 ### eval STRING ...
 
 ​    将参数用单个空格作为分隔符连接在一起，并将结果作为 GRUB 命令序列执行。
@@ -511,6 +519,14 @@ layout: default
 
 ​    从端口读取16比特数值，参数同 "inb"
 
+### **isotools OPTIONS FILE [VARIABLE]**
+
+​    ISO El Torito 相关工具
+
+- \-\-offset, -o UEFI El Torito 镜像的偏移 (单位为扇区)
+- \-\-length, -l UEFI El Torito 镜像的大小 (单位为扇区)
+- \-\-ventoy, -v 检测 ISO 镜像中是否含有 Ventoy Compatible 信息
+
 ### keymap FILE
 
 ​    加载键盘布局
@@ -584,6 +600,16 @@ layout: default
 
 ​    加载 BIOS 转储
 
+### **loadfile [OPTIONS] FILE**
+
+​    将文件加载到内存
+
+- \-\-skip=n, -k 跳过文件头部的 n 个字节
+- \-\-length=n, -l 指定读取的字节数
+- \-\-addr=ADDR, -a 指定加载到的内存地址
+- \-\-nodecompress, -n 不自动解压文件
+- \-\-set=VARIABLE, -s 将内存文件名保存到变量
+
 ### loopback [OPTIONS] DEVICE FILE
 
 ​    将文件挂载为虚拟盘
@@ -649,6 +675,7 @@ layout: default
 - \-\-blocklist, -l 转换为 blocklist 类型磁盘，这将加快虚拟盘读取速度并启用写入功能
 - \-\-type=CD/HD/FD, -t 指定磁盘类型为光盘/硬盘/软盘
 - \-\-ro, -o 禁止写入虚拟盘
+- \-\-eltorito=DISK, -e 同时指定挂载 El Torito 镜像的盘符
 - \-\-nb, -n 不启动此虚拟盘
 - \-\-unmap=DISK, -x 屏蔽某磁盘
 
@@ -712,6 +739,15 @@ layout: default
 - \-\-win, -n 启动磁盘上的 Windows
 - \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
 - \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
+- \-\-dll=FILE, -d 指定 bootvhd.dll 路径
+
+### **nthibr FILE**
+
+​    检测 NTFS 的 hiberfil.sys 是否处于休眠状态
+
+### **ntversion (hdx,y) VARIABLE**
+
+​    获取安装在磁盘分区 (hdx,y) 上的 Windows NT 的版本信息
 
 ### outb PORT VALUE [MASK]
 
@@ -848,9 +884,14 @@ layout: default
 
 - \-\-set=[NUMBER:]\[VARIABLE], -s 将第 n 个匹配字符串保存到变量中
 
-### reset
+### **reset [OPTIONS]**
 
-​    重启计算机 (同 "reboot")
+​    重启计算机 (非`efi`平台下与 "reboot" 用法相同，不支持参数)
+
+- \-\-shutdown, -s 执行关机
+- \-\-warm, -w 执行热启动
+- \-\-cold, -c 执行冷启动
+- \-\-fwui, -f 下一次启动时回到固件设置用户界面
 
 ### save_env [OPTIONS] VARIABLE ...
 
@@ -1163,6 +1204,10 @@ layout: default
 ​    将 PUBKEY 添加到信任密钥列表
 
 - \-\-skip-sig, -s 跳过公钥文件的签名检查
+
+### **unalias NAME**
+
+​    取消设置别名
 
 ### **uuid4** VARIABLE
 

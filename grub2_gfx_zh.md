@@ -4,6 +4,10 @@ layout: default
 
 ## 主题
 
+注意：主题与文件读取进度功能冲突。如果出现图像显示方面的问题，请禁用进度显示。
+
+`export enable_progress_indicator=0`
+
 ### 字体
 
 GRUB 支持 PFF2 字体格式。可以用 `lsfonts` 命令列出可用字体，用 `loadfonts` 命令加载字体。
