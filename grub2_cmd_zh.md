@@ -678,6 +678,7 @@ layout: default
 - \-\-eltorito=DISK, -e 同时指定挂载 El Torito 镜像的盘符
 - \-\-nb, -n 不启动此虚拟盘
 - \-\-unmap=DISK, -x 屏蔽某磁盘
+- \-\-first, -f 使虚拟盘排在磁盘列表的第一位，以解决 Windows 启动问题
 
 ### md5sum arg ...
 

@@ -30,14 +30,6 @@ export color_highlight=black/white;
 terminal_output gfxterm;
 
 #### FUNCTION ####
-function unmap_cd {
-    for dev in (cd*); do
-        if [ -e ${dev} ]; then
-            map -x ${dev};
-        fi;
-    done;
-}
-
 function to_g4d_path {
     unset g4d_path;
     if regexp --set=1:num '^\(hd[0-9]+,[a-zA-Z]*([0-9]+)\).*' "${1}"; then
@@ -95,8 +87,7 @@ menuentry "Boot Microsoft Windows 8/10" {
 menuentry "Boot WinPE ISO" {
     set iso_file="(hd0,2)/winpe.iso";
     if [ "$grub_platform" = "efi" ]; then
-        unmap_cd;
-        map "${iso_file}";
+        map -f "${iso_file}";
     elif [ "$grub_platform" = "pc" ]; then
         to_g4d_path "${iso_file}";
         if [ -n "${g4d_path}" ]; then
