@@ -8,7 +8,7 @@ layout: default
 
   File manager for GRUB 2.
 
-  [简体中文](https://a1ive.github.io/grub2-filemanager/)
+  [简体中文](https://a1ive.gitee.io/grub2-filemanager/)
 
   Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) [Gitee](https://gitee.com/a1ive/grub2-filemanager/releases) 中国大陆用户可用 GitHub [代下载服务](http://gitd.cc/) 
 
@@ -24,9 +24,7 @@ layout: default
 
   Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) 中国大陆用户可用 GitHub [代下载服务](http://gitd.cc/) 
 
-  Manual: [简体中文](./grub2_zh.html) 
-
-  Extra modules: [grub-extras](https://github.com/a1ive/grub-extras) 
+  Manual: [简体中文手册](./grub2_zh.html) 
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub)
 
