@@ -128,6 +128,10 @@ menuentry "Boot Windows Nt6+ VHD/VHDX" {
 }
 
 if [ "$grub_platform" = "efi" ]; then
+    menuentry "Boot Windows SVBus RamOS VHD" {
+        map --mem --rt (hd0,2)/ramos.vhd;
+    }
+
     menuentry "UEFI Firmware Setup" {
         reset --fwui;
     }

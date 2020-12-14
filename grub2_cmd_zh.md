@@ -887,7 +887,7 @@ layout: default
 
 ### **reset [OPTIONS]**
 
-​    重启计算机 (非`efi`平台下与 "reboot" 用法相同，不支持参数)
+​    重启计算机
 
 - \-\-shutdown, -s 执行关机
 - \-\-warm, -w 执行热启动
