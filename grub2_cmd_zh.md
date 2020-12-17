@@ -1238,45 +1238,6 @@ layout: default
 
 ​    显示 GRUB 版本信息
 
-### **vfat** OPTIONS
-
-​    UEFI 虚拟 FAT 磁盘操作
-
-- \-\-create, -c 创建虚拟 FAT 磁盘
-
-- \-\-add=NAME FILE, -a 指定将文件 FILE 加入虚拟盘，虚拟盘内文件名为 NAME
-
-- \-\-mem, -m 指定文件载入内存，允许写入文件
-
-- \-\-install, -i 使虚拟盘在 UEFI 中可见
-
-- \-\-boot, -b 启动虚拟盘
-
-- \-\-ls, -l 列出虚拟盘中所有文件
-
-- \-\-patch=FILE STRING, -p 指定要修改的文件名，文件必须在内存中
-
-- \-\-offset=n, -o 指定修改的偏移量
-
-- \-\-search=STRING, -s 搜索字符串
-
-- \-\-count=n, -c 指定搜索次数
-
-  搜索及替换的字符串支持以下格式
-
-  | 格式                    | 类型       | 示例输入 | 示例输出        |
-  | ----------------------- | ---------- | -------- | --------------- |
-  | sSTRING 以's'开头       | 普通字符串 | sHello   | Hello           |
-  | wSTRING 以'w'开头       | 宽字符串   | wWin32   | W\0i\0n\03\02\0 |
-  | STRING 开头不是's'或'w' | 十六进制   | 74657374 | test            |
-
-### **vhd** [OPTIONS] DEVICE FILE
-
-​    将 vhd 文件挂载为虚拟盘
-
-- \-\-delete, -d 删除虚拟盘
-- \-\-partitions -p 模拟带分区的硬盘
-
 ### videoinfo [WxH[xD]]
 
 ​    列出可用显示模式
