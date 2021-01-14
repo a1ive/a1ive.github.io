@@ -1327,7 +1327,7 @@ layout: default
 
 ​    WIM 解析工具
 
-- \-\-index=n, i 指定 WIM 卷号
+- \-\-index=n, -i 指定 WIM 卷号
 - \-\-exist, -e 检测文件是否存在
 - \-\-is64, -a 检测 WIM 内部系统是否为 64 位 (x86_64)
 
