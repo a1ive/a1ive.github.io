@@ -64,7 +64,7 @@ menuentry "Boot Manjaro LiveCD" {
     configfile /boot/grub/loopback.cfg;
 }
 
-menuentry "Boot deepin" {
+menuentry "Boot deepin LiveCD" {
     export iso_path="/livecd/deepin-15.11-amd64.iso";
     search --set=root --file "${iso_path}";
     loopback loop "${iso_path}";
@@ -127,9 +127,21 @@ menuentry "Boot Windows Nt6+ VHD/VHDX" {
     ntboot --vhd --efi="${winload}" "${vhd_file}";
 }
 
+menuentry "Load ACPI SLIC table" {
+    acpi --slic ($root)/slic.bin;
+    echo "Finished - press any key to continue...";
+    getkey;
+}
+
 if [ "$grub_platform" = "efi" ]; then
     menuentry "Boot Windows SVBus RamOS VHD" {
         map --mem --rt (hd0,2)/ramos.vhd;
+    }
+
+    menuentry "Load BGRT BMP image (Windows boot logo)" {
+        acpi --bgrt ($root)/logo.bmp;
+        echo "Finished - press any key to continue...";
+        getkey;
     }
 
     menuentry "UEFI Firmware Setup" {
@@ -144,15 +156,15 @@ if [ "$grub_platform" = "efi" ]; then
 fi;
 
 menuentry "GRUB Shell" {
-  commandline;
+    commandline;
 }
 
 menuentry "Reboot (R)" --hotkey "r" {
-  reboot;
+    reboot;
 }
 
 menuentry "Halt (H)" --hotkey "h" {
-  halt;
+    halt;
 }
 
 ```
