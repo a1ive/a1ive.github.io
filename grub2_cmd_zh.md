@@ -193,14 +193,35 @@ layout: default
 
 ​    计算文件的 CRC32 校验码
 
-### cpuid [OPTIONS]
+### cpuid [OPTIONS] | EAX EAX_VAR EBX_VAR ECX_VAR EDX_VAR
 
 ​    检测 CPU 特性
 
 ​    若不加参数，则默认参数为 -l。若 CPU 支持该特性，则返回 0。
 
+- **\-\-set=VARIABLE, -s 将测试结果保存到变量**
 - \-\-long-mode, -l 检测 CPU 是否支持64位长模式
 - \-\-pae, -p 检测 CPU 是否支持物理地址扩展 (PAE)
+- **\-\-vendor, -v 获取 CPU 制造商 ID**
+- **\-\-vme 检测 CPU 是否支持虚拟 8086 扩展**
+- **\-\-pse 检测 CPU 是否支持页大小扩展**
+- **\-\-tsc 检测 CPU 是否支持 TSC**
+- **\-\-msr 检测 CPU 是否支持 MSR**
+- **\-\-mtrr 检测 CPU 是否支持 MTRR**
+- **\-\-mmx 检测 CPU 是否支持 MMX**
+- **\-\-sse 检测 CPU 是否支持 SSE**
+- **\-\-sse2 检测 CPU 是否支持 SSE2**
+- **\-\-sse3 检测 CPU 是否支持 SSE3**
+- **\-\-vmx 检测 CPU 是否支持虚拟机扩展**
+- **\-\-vmsign 获取虚拟机签名**
+- **\-\-hypervisor 检测虚拟机是否存在**
+- **\-\-dts 检测 CPU 是否支持 DTS**
+- **\-\-emax, -e 获取 CPUID 所能接受的最大的扩展功能输入值**
+- **\-\-brand, -b 获取 CPU 名称**
+
+### **cputemp [VARIABLE]**
+
+​    读取 CPU 温度 (仅支持部分 Intel CPU)
 
 ### cryptomount DEVICE | -u UUID | -a | -b
 
@@ -219,6 +240,7 @@ layout: default
 ​    显示/设置当前时间
 
 - **\-\-set=VARIABLE, -s 将时间保存到变量**
+- **\-\-human, -h 按可都格式保存到变量** 
 
 ### **decrement** VARIABLE
 
@@ -671,13 +693,16 @@ layout: default
 ​    创建 UEFI 虚拟盘
 
 - \-\-mem, -m 加载到内存
-- \-\-rt 指定内存盘使用 `RUNTIME_SERVICES_DATA` 类型内存
+- \-\-rt 指定内存盘使用 `RESERVED_MEMORY_TYPE` 类型内存
 - \-\-blocklist, -l 转换为 blocklist 类型磁盘，这将加快虚拟盘读取速度并启用写入功能
 - \-\-type=CD/HD/FD, -t 指定磁盘类型为光盘/硬盘/软盘
 - \-\-ro, -o 禁止写入虚拟盘
 - \-\-eltorito=DISK, -e 同时指定挂载 El Torito 镜像的盘符
 - \-\-nb, -n 不启动此虚拟盘
 - \-\-unmap=DISK, -x 屏蔽某磁盘
+- \-\-first, -f 使虚拟盘排在磁盘列表的第一位，以解决 Windows 启动问题
+- \-\-no_g4d, -g 不向内存写入 GRUB4DOS 兼容的磁盘映射信息
+- \-\-no_vt, -v 不写入 Ventoy 兼容信息
 
 ### md5sum arg ...
 
@@ -697,6 +722,9 @@ layout: default
 - \-\-source=STRING Use STRING as menu entry body.
 - \-\-id=STRING 将唯一标识符与菜单项关联。id 不能以数字开头，仅支持 ASCII 字母数字，下划线和连字符
 - \-\-unrestricted 允许所有用户执行此菜单
+- **\-\-help-msg=TEXT 设置菜单帮助文本**
+- **\-\-hidden 隐藏菜单项**
+- **\-\-submenu 支持内部定义子菜单项**
 
 ​    特殊热键：
 
@@ -737,9 +765,24 @@ layout: default
 - \-\-vhd, -v 指定文件类型为 VHD/VHDX
 - \-\-wim, -w 指定文件类型为 WIM
 - \-\-win, -n 启动磁盘上的 Windows
+- \-\-ramvhd, -r 指定文件类型为 RamOS VHD (此选项仅供测试)
 - \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
 - \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
 - \-\-dll=FILE, -d 指定 bootvhd.dll 路径
+- \-\-testmode=yes|no 测试模式 (testsigning)
+- \-\-highest=yes|no 强制使用最高分辨率
+- \-\-nx=OptIn|OptOut|AlwaysOff|AlwaysOn 指定 NX 策略
+- \-\-pae=Default|Enable|Disable 指定 PAE 策略
+- \-\-detecthal=yes|no 检测 HAL 和 kernel
+- \-\-winpe=yes|no 启动到 WinPE 模式 (/MININT)
+- \-\-imgoffset=n 指定 RamOS VHD 内存盘偏移
+- \-\-timeout=n 设置超时
+- \-\-sos=yes|no 启用 SOS 模式
+- \-\-novesa=yes|no 禁用 VESA BIOS 调用
+- \-\-novga=yes|no 禁用 VGA 模式
+- \-\-loadoptions=XXX 指定 NT 内核加载参数
+- \-\-winload=\\WIN32_PATH 指定 winload 路径
+- \-\-sysroot=\\WIN32_PATH 指定系统根目录
 
 ### **nthibr FILE**
 
@@ -886,7 +929,7 @@ layout: default
 
 ### **reset [OPTIONS]**
 
-​    重启计算机 (非`efi`平台下与 "reboot" 用法相同，不支持参数)
+​    重启计算机
 
 - \-\-shutdown, -s 执行关机
 - \-\-warm, -w 执行热启动
@@ -1205,6 +1248,10 @@ layout: default
 
 - \-\-skip-sig, -s 跳过公钥文件的签名检查
 
+#### **type COMMAND**
+
+​    检测命令是否存在，存在则返回 `0`
+
 ### **unalias NAME**
 
 ​    取消设置别名
@@ -1237,45 +1284,6 @@ layout: default
 
 ​    显示 GRUB 版本信息
 
-### **vfat** OPTIONS
-
-​    UEFI 虚拟 FAT 磁盘操作
-
-- \-\-create, -c 创建虚拟 FAT 磁盘
-
-- \-\-add=NAME FILE, -a 指定将文件 FILE 加入虚拟盘，虚拟盘内文件名为 NAME
-
-- \-\-mem, -m 指定文件载入内存，允许写入文件
-
-- \-\-install, -i 使虚拟盘在 UEFI 中可见
-
-- \-\-boot, -b 启动虚拟盘
-
-- \-\-ls, -l 列出虚拟盘中所有文件
-
-- \-\-patch=FILE STRING, -p 指定要修改的文件名，文件必须在内存中
-
-- \-\-offset=n, -o 指定修改的偏移量
-
-- \-\-search=STRING, -s 搜索字符串
-
-- \-\-count=n, -c 指定搜索次数
-
-  搜索及替换的字符串支持以下格式
-
-  | 格式                    | 类型       | 示例输入 | 示例输出        |
-  | ----------------------- | ---------- | -------- | --------------- |
-  | sSTRING 以's'开头       | 普通字符串 | sHello   | Hello           |
-  | wSTRING 以'w'开头       | 宽字符串   | wWin32   | W\0i\0n\03\02\0 |
-  | STRING 开头不是's'或'w' | 十六进制   | 74657374 | test            |
-
-### **vhd** [OPTIONS] DEVICE FILE
-
-​    将 vhd 文件挂载为虚拟盘
-
-- \-\-delete, -d 删除虚拟盘
-- \-\-partitions -p 模拟带分区的硬盘
-
 ### videoinfo [WxH[xD]]
 
 ​    列出可用显示模式
@@ -1301,12 +1309,25 @@ layout: default
 - \-\-index=n, -i 指定要启动的WIM卷号
 - \-\-pause, -p 启动前暂停
 - \-\-inject=WIN32_PATH, -j 指定射入文件夹，默认为 \Windows\Syatem32
+- \-\-testmode=yes|no 测试模式 (testsigning)
+- \-\-highest=yes|no 强制使用最高分辨率
+- \-\-nx=OptIn|OptOut|AlwaysOff|AlwaysOn 指定 NX 策略
+- \-\-pae=Default|Enable|Disable 指定 PAE 策略
+- \-\-detecthal=yes|no 检测 HAL 和 kernel
+- \-\-winpe=yes|no 启动到 WinPE 模式 (/MININT)
+- \-\-timeout=n 设置超时
+- \-\-sos=yes|no 启用 SOS 模式
+- \-\-novesa=yes|no 禁用 VESA BIOS 调用
+- \-\-novga=yes|no 禁用 VGA 模式
+- \-\-loadoptions=XXX 指定 NT 内核加载参数
+- \-\-winload=\\WIN32_PATH 指定 winload 路径
+- \-\-sysroot=\\WIN32_PATH 指定系统根目录
 
 ### **wimtools OPTIONS FILE [WIN32_PATH]**
 
 ​    WIM 解析工具
 
-- \-\-index=n, i 指定 WIM 卷号
+- \-\-index=n, -i 指定 WIM 卷号
 - \-\-exist, -e 检测文件是否存在
 - \-\-is64, -a 检测 WIM 内部系统是否为 64 位 (x86_64)
 

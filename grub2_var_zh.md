@@ -65,9 +65,17 @@ GRUB 支持类似 Unix 的环境变量。其中一些变量对 GRUB 来说有特
 
 若启动过程中出现问题，请尝试设为 "text"。
 
+#### grub_build_date
+
+GRUB 构建日期。
+
 #### grub_cpu
 
 GRUB 构建时选择的 CPU 类型， 如 "i386", "x86_64" 等。
+
+#### grub_detect_floppies
+
+设置 Legacy BIOS 下是否检测软驱。默认值为 0，忽略软驱。
 
 #### grub_disable_console
 
@@ -105,7 +113,11 @@ GRUB 构建时选择的 CPU 类型， 如 "i386", "x86_64" 等。
 
 #### grub_normal_menu_title
 
-指定无主题情况下菜单标题的文本内容
+指定无主题情况下菜单标题的文本内容。
+
+#### grub_pkg_version
+
+GRUB 主版本号。
 
 #### grub_platform
 
@@ -132,6 +144,10 @@ GRUB 命令提示符，默认为 "grub>"。
 自定义循环播放音乐，形如 "freq1 freq2 freq3 ..."，其中 freq1, freq2, freq3 ... 是频率，单位为赫兹。
 
 默认值为 "220 277 330 440 185 220 277 370 294 370 440 587 330 415 494 659"。
+
+#### grub_uefi_version
+
+UEFI 固件版本。
 
 #### icondir
 

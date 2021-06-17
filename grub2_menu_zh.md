@@ -30,14 +30,6 @@ export color_highlight=black/white;
 terminal_output gfxterm;
 
 #### FUNCTION ####
-function unmap_cd {
-    for dev in (cd*); do
-        if [ -e ${dev} ]; then
-            map -x ${dev};
-        fi;
-    done;
-}
-
 function to_g4d_path {
     unset g4d_path;
     if regexp --set=1:num '^\(hd[0-9]+,[a-zA-Z]*([0-9]+)\).*' "${1}"; then
@@ -72,7 +64,7 @@ menuentry "Boot Manjaro LiveCD" {
     configfile /boot/grub/loopback.cfg;
 }
 
-menuentry "Boot deepin" {
+menuentry "Boot deepin LiveCD" {
     export iso_path="/livecd/deepin-15.11-amd64.iso";
     search --set=root --file "${iso_path}";
     loopback loop "${iso_path}";
@@ -95,8 +87,7 @@ menuentry "Boot Microsoft Windows 8/10" {
 menuentry "Boot WinPE ISO" {
     set iso_file="(hd0,2)/winpe.iso";
     if [ "$grub_platform" = "efi" ]; then
-        unmap_cd;
-        map "${iso_file}";
+        map -f "${iso_file}";
     elif [ "$grub_platform" = "pc" ]; then
         to_g4d_path "${iso_file}";
         if [ -n "${g4d_path}" ]; then
@@ -136,7 +127,23 @@ menuentry "Boot Windows Nt6+ VHD/VHDX" {
     ntboot --vhd --efi="${winload}" "${vhd_file}";
 }
 
+menuentry "Load ACPI SLIC table" {
+    acpi --slic ($root)/slic.bin;
+    echo "Finished - press any key to continue...";
+    getkey;
+}
+
 if [ "$grub_platform" = "efi" ]; then
+    menuentry "Boot Windows SVBus RamOS VHD" {
+        map --mem --rt (hd0,2)/ramos.vhd;
+    }
+
+    menuentry "Load BGRT BMP image (Windows boot logo)" {
+        acpi --bgrt ($root)/logo.bmp;
+        echo "Finished - press any key to continue...";
+        getkey;
+    }
+
     menuentry "UEFI Firmware Setup" {
         reset --fwui;
     }
@@ -149,15 +156,15 @@ if [ "$grub_platform" = "efi" ]; then
 fi;
 
 menuentry "GRUB Shell" {
-  commandline;
+    commandline;
 }
 
 menuentry "Reboot (R)" --hotkey "r" {
-  reboot;
+    reboot;
 }
 
 menuentry "Halt (H)" --hotkey "h" {
-  halt;
+    halt;
 }
 
 ```
