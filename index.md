@@ -16,7 +16,7 @@ layout: default
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub2-filemanager)
 
-- ### [GNU GRUB2](https://github.com/a1ive/grub)
+- ### [a1ive GRUB2](https://github.com/a1ive/grub)
 
   ![](https://img.shields.io/github/license/a1ive/grub) ![](https://img.shields.io/travis/a1ive/grub) ![](https://img.shields.io/github/release-date/a1ive/grub) ![](https://img.shields.io/github/downloads/a1ive/grub/total)
 
@@ -30,6 +30,14 @@ layout: default
 
   Mirrors: [Gitee](https://gitee.com/a1ive/grub)
 
+- ### [GRUB4DOS](https://github.com/chenall/grub4dos)
+
+  Universal boot loader based on GRUB Legacy.
+
+  Download: [GitHub](https://github.com/chenall/grub4dos/releases) [chenall.net](http://grub4dos.chenall.net/)
+
+  Extra utilities: [grubutils](https://github.com/chenall/grubutils)
+
 - ### [UEFI-Tetris](https://github.com/a1ive/uefi-tetris)
 
   Tetris game for UEFI.
@@ -37,6 +45,4 @@ layout: default
 - ### [Win95 Theme for GRUB](https://github.com/a1ive/grub-theme-win95)
 
   GRUB theme based on the classic appearance of Windows 95.
-
-- ### [备份](./backup.html)
 
