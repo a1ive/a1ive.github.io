@@ -12,10 +12,6 @@ layout: default
 
   Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) [Gitee](https://gitee.com/a1ive/grub2-filemanager/releases) 中国大陆用户可用 GitHub [代下载服务](http://gitd.cc/) 
 
-  Help to translate: [Crowdin](https://crowdin.com/project/grub2-filemanager) 
-
-  Mirrors: [Gitee](https://gitee.com/a1ive/grub2-filemanager)
-
 - ### [a1ive GRUB2](https://github.com/a1ive/grub)
 
   ![](https://img.shields.io/github/license/a1ive/grub) ![](https://img.shields.io/travis/a1ive/grub) ![](https://img.shields.io/github/release-date/a1ive/grub) ![](https://img.shields.io/github/downloads/a1ive/grub/total)
@@ -26,9 +22,9 @@ layout: default
 
   Manual: [简体中文手册](./grub2_zh.html) 
 
-  Mirrors: [Gitee](https://gitee.com/a1ive/grub)
-
 - ### [GRUB4DOS](https://github.com/chenall/grub4dos)
+
+  ![GitHub](https://img.shields.io/github/license/chenall/grub4dos) ![GitHub Release Date](https://img.shields.io/github/release-date/chenall/grub4dos) ![GitHub all releases](https://img.shields.io/github/downloads/chenall/grub4dos/total)
 
   Universal boot loader based on GRUB Legacy.
 
