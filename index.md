@@ -10,7 +10,7 @@ layout: default
 
   [简体中文](https://a1ive.github.io/grub2-filemanager/)
 
-  Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) 中国大陆用户可用 GitHub [代下载服务](http://gitd.cc/) 
+  Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) 
 
 - ### [a1ive GRUB2](https://github.com/a1ive/grub)
 
@@ -18,7 +18,7 @@ layout: default
 
   Fork of GRUB 2 to add various features. 
 
-  Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) 中国大陆用户可用 GitHub [代下载服务](http://gitd.cc/) 
+  Download: [GitHub](https://github.com/a1ive/grub/releases/tag/latest) 
 
   Manual: [简体中文手册](./grub2_zh.html) 
 
