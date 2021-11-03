@@ -2,7 +2,7 @@
 layout: default
 ---
 
-- ### [GRUB2-FileManager *(DEPRECATED)*](https://github.com/a1ive/grub2-filemanager)
+- ### [GRUB2-FileManager](https://github.com/a1ive/grub2-filemanager)
 
   ![](https://img.shields.io/github/license/a1ive/grub2-filemanager) ![](https://img.shields.io/github/stars/a1ive/grub2-filemanager) ![](https://badges.crowdin.net/grub2-filemanager/localized.svg) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total)
 
@@ -10,7 +10,7 @@ layout: default
 
   Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) 
 
-- ### [a1ive GRUB2 *(DEPRECATED)*](https://github.com/a1ive/grub)
+- ### [a1ive GRUB2](https://github.com/a1ive/grub)
 
   ![](https://img.shields.io/github/license/a1ive/grub) ![](https://img.shields.io/github/stars/a1ive/grub) ![](https://img.shields.io/github/downloads/a1ive/grub/total)
 
