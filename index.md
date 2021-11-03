@@ -2,7 +2,7 @@
 layout: default
 ---
 
-- ### [GRUB2-FileManager (*DEPRECATED*)](https://github.com/a1ive/grub2-filemanager)
+- ### [GRUB2-FileManager *(DEPRECATED)*](https://github.com/a1ive/grub2-filemanager)
 
   ![](https://img.shields.io/github/license/a1ive/grub2-filemanager) ![](https://img.shields.io/github/stars/a1ive/grub2-filemanager) ![](https://badges.crowdin.net/grub2-filemanager/localized.svg) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total)
 
@@ -10,7 +10,7 @@ layout: default
 
   Download: [GitHub](https://github.com/a1ive/grub2-filemanager/releases) 
 
-- ### [a1ive GRUB2 (*DEPRECATED*)](https://github.com/a1ive/grub)
+- ### [a1ive GRUB2 *(DEPRECATED)*](https://github.com/a1ive/grub)
 
   ![](https://img.shields.io/github/license/a1ive/grub) ![](https://img.shields.io/github/stars/a1ive/grub) ![](https://img.shields.io/github/downloads/a1ive/grub/total)
 
@@ -20,7 +20,7 @@ layout: default
 
   Manual: [简体中文手册](./grub2_zh.html) 
 
-- ### [GRUB4DOS](https://github.com/chenall/grub4dos)
+- ### [GRUB4DOS](https://github.com/chenall/grub4dos) (Collaborator)
 
   ![GitHub](https://img.shields.io/github/license/chenall/grub4dos) ![](https://img.shields.io/github/stars/chenall/grub4dos) ![GitHub Release Date](https://img.shields.io/github/release-date/chenall/grub4dos) ![GitHub all releases](https://img.shields.io/github/downloads/chenall/grub4dos/total)
 
@@ -30,7 +30,7 @@ layout: default
 
   Extra utilities: [grubutils](https://github.com/chenall/grubutils)
 
-- ### [Ventoy](https://github.com/ventoy/Ventoy)
+- ### [Ventoy](https://github.com/ventoy/Ventoy) (Contributor)
 
   ![license](https://img.shields.io/github/license/ventoy/Ventoy) ![stars](https://img.shields.io/github/stars/ventoy/Ventoy) ![](https://img.shields.io/github/downloads/ventoy/Ventoy/total.svg)
 
