@@ -765,21 +765,19 @@ layout: default
 - \-\-vhd, -v 指定文件类型为 VHD/VHDX
 - \-\-wim, -w 指定文件类型为 WIM
 - \-\-win, -n 启动磁盘上的 Windows
-- \-\-ramvhd, -r 指定文件类型为 RamOS VHD (此选项仅供测试)
 - \-\-efi=FILE, -e 指定 bootmgfw.efi 路径，默认为 /efi/microsoft/boot/bootmgfw.efi
 - \-\-sdi=FILE, -s 指定 boot.sdi 路径，默认为 /boot/boot.sdi
 - \-\-dll=FILE, -d 指定 bootvhd.dll 路径
-- \-\-testmode=yes|no 测试模式 (testsigning)
-- \-\-highest=yes|no 强制使用最高分辨率
-- \-\-nx=OptIn|OptOut|AlwaysOff|AlwaysOn 指定 NX 策略
-- \-\-pae=Default|Enable|Disable 指定 PAE 策略
-- \-\-detecthal=yes|no 检测 HAL 和 kernel
-- \-\-winpe=yes|no 启动到 WinPE 模式 (/MININT)
+- \-\-testmode=yes/no 测试模式 (testsigning)
+- \-\-highest=yes/no 强制使用最高分辨率
+- \-\-nx=OptIn/OptOut/AlwaysOff/AlwaysOn 指定 NX 策略
+- \-\-pae=Default/Enable/Disable 指定 PAE 策略
+- \-\-detecthal=yes/no 检测 HAL 和 kernel
+- \-\-winpe=yes/no 启动到 WinPE 模式 (/MININT)
 - \-\-imgoffset=n 指定 RamOS VHD 内存盘偏移
 - \-\-timeout=n 设置超时
-- \-\-sos=yes|no 启用 SOS 模式
-- \-\-novesa=yes|no 禁用 VESA BIOS 调用
-- \-\-novga=yes|no 禁用 VGA 模式
+- \-\-novesa=yes/no 禁用 VESA BIOS 调用
+- \-\-novga=yes/no 禁用 VGA 模式
 - \-\-loadoptions=XXX 指定 NT 内核加载参数
 - \-\-winload=\\WIN32_PATH 指定 winload 路径
 - \-\-sysroot=\\WIN32_PATH 指定系统根目录
@@ -1309,16 +1307,15 @@ layout: default
 - \-\-index=n, -i 指定要启动的WIM卷号
 - \-\-pause, -p 启动前暂停
 - \-\-inject=WIN32_PATH, -j 指定射入文件夹，默认为 \Windows\Syatem32
-- \-\-testmode=yes|no 测试模式 (testsigning)
-- \-\-highest=yes|no 强制使用最高分辨率
-- \-\-nx=OptIn|OptOut|AlwaysOff|AlwaysOn 指定 NX 策略
-- \-\-pae=Default|Enable|Disable 指定 PAE 策略
-- \-\-detecthal=yes|no 检测 HAL 和 kernel
-- \-\-winpe=yes|no 启动到 WinPE 模式 (/MININT)
+- \-\-testmode=yes/no 测试模式 (testsigning)
+- \-\-highest=yes/no 强制使用最高分辨率
+- \-\-nx=OptIn/OptOut/AlwaysOff/AlwaysOn 指定 NX 策略
+- \-\-pae=Default/Enable/Disable 指定 PAE 策略
+- \-\-detecthal=yes/no 检测 HAL 和 kernel
+- \-\-winpe=yes/no 启动到 WinPE 模式 (/MININT)
 - \-\-timeout=n 设置超时
-- \-\-sos=yes|no 启用 SOS 模式
-- \-\-novesa=yes|no 禁用 VESA BIOS 调用
-- \-\-novga=yes|no 禁用 VGA 模式
+- \-\-novesa=yes/no 禁用 VESA BIOS 调用
+- \-\-novga=yes/no 禁用 VGA 模式
 - \-\-loadoptions=XXX 指定 NT 内核加载参数
 - \-\-winload=\\WIN32_PATH 指定 winload 路径
 - \-\-sysroot=\\WIN32_PATH 指定系统根目录
