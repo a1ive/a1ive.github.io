@@ -44,7 +44,7 @@ layout: default
 
   参数为枚举执行的函数，可获取设备名，文件系统，UUID 和卷标。
 
-- grub.enum_file (`function` (`string` filename[, `int` isdir]))
+- grub.enum_file (`function` (`string` filename[, `int` isdir]), `string` path)
 
   枚举某目录下的文件和文件夹 (包括 `.` 和 `..`)
 
