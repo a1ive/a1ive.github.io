@@ -182,6 +182,11 @@ automatic=method:disk,uuid:${rootuuid},directory:${iso_path}
 sr=${iso_path}
 ```
 
+## CDlinux
+```
+CDL_DEV=UUID=${rootuuid} CDL_IMG=${iso_path} CDL_DIR=/
+```
+
 ## TinyCore
 ```
 iso=UUID=${rootuuid}${iso_path}
