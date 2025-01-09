@@ -37,7 +37,7 @@ findiso=${iso_path} boot=live
 ```
 
 ## Fedora-based
-### LiveCD
+### LiveCD / openSUSE
 ```
 iso-scan/filename=${iso_path} root=live:CDLABEL=${cd_label} rd.live.image
 ```
