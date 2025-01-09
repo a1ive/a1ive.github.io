@@ -192,6 +192,10 @@ CDL_DEV=UUID=${rootuuid} CDL_IMG=${iso_path} CDL_DIR=/
 iso=UUID=${rootuuid}${iso_path}
 ```
 
+```
+tce=UUID=${rootuuid}${iso_path}
+```
+
 ## Knoppix
 ```
 bootfrom=/dev/*${iso_path}
