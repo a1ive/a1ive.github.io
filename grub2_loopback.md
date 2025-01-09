@@ -37,12 +37,22 @@ findiso=${iso_path} boot=live
 ```
 
 ## Fedora-based
-### LiveCD / openSUSE
+### LiveCD
+- Fedora
+- openSUSE
+- Void Linux
+- Solus
+- EuroLinux
 ```
 iso-scan/filename=${iso_path} root=live:CDLABEL=${cd_label} rd.live.image
 ```
 
 ### DVD & Netinstall
+- Fedora
+- CentOS
+- Rocky Linux
+- Oracle Linux
+- EuroLinux
 ```
 iso-scan/filename=${iso_path} inst.stage2=hd:LABEL=${cd_label}
 ```
@@ -95,6 +105,11 @@ fromiso=${iso_path} findiso=${iso_path}
 fromiso=${iso_path}
 ```
 
+## OpenMandriva
+```
+iso-scan/filename=${iso_path} root=live:LABEL=${cd_label}
+```
+
 ## System Rescue CD
 ### Gentoo-based
 ```
@@ -114,6 +129,10 @@ bootfromiso=${iso_path}
 ## PCLinuxOS
 ```
 root=UUID=${rootuuid} isoboot=${iso_path}
+```
+
+```
+bootfromiso=${iso_path} root=(loop)
 ```
 
 ## Calculate Linux
@@ -154,7 +173,7 @@ find_iso=${iso_path}
 
 ## Parted Magic
 ```
-iso_filename=${iso_path}
+iso_filename=${iso_path} uuid=${rootuuid}
 ```
 
 ## Plop Linux
@@ -164,10 +183,10 @@ iso_filename=${iso_path}
 
 ## Slackware
 ```
-livemedia=scandev:${iso_path}
+livemedia=/dev/disk/by-uuid/${rootuuid}:${iso_path}
 ```
 
-## antiX / MX Linux
+## antiX / MX Linux / Damn Small Linux
 ```
 fromiso=${iso_path} from=hd,usb
 ```
@@ -199,4 +218,19 @@ tce=UUID=${rootuuid}${iso_path}
 ## Knoppix
 ```
 bootfrom=/dev/*${iso_path}
+```
+
+## Qubes
+```
+iso-scan/filename=${iso_path} inst.repo=hd:LABEL=${cd_label}
+```
+
+## LinuxWelt Rettungs
+```
+isoloop=${iso_path} scandelay=1
+```
+
+## Kaspersky Rescue Disk
+```
+isoloop=${iso_path}
 ```
