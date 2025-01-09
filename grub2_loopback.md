@@ -215,7 +215,7 @@ iso=UUID=${rootuuid}${iso_path} tce=UUID=${rootuuid}${iso_path}
 
 ## Knoppix
 ```
-bootfrom=/mnt-iso${iso_path}
+bootfrom=/mnt-iso/${iso_path}
 ```
 
 ## Qubes
