@@ -50,6 +50,7 @@ iso-scan/filename=${iso_path} root=live:CDLABEL=${cd_label} rd.live.image
 ### DVD & Netinstall
 - Fedora
 - CentOS
+- RHEL
 - Rocky Linux
 - Oracle Linux
 - EuroLinux
