@@ -167,7 +167,7 @@ iso_filename=${iso_path}
 livemedia=scandev:${iso_path}
 ```
 
-## antiX
+## antiX / MX Linux
 ```
 fromiso=${iso_path} from=hd,usb
 ```
