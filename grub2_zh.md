@@ -17,3 +17,5 @@ layout: default
 ## [Lua](./grub2_lua_zh.html)
 
 ## [FatFs](./grub2_fatfs_zh.html)
+
+## [ISO Loopback 启动](./grub2_loopback.md)
