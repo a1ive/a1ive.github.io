@@ -95,7 +95,7 @@ chakraisolabel=${cd_label}
 isoboot={iso_path}
 ```
 
-## Deepin
+## Deepin / UnionTech OS
 ```
 fromiso=${iso_path} findiso=${iso_path}
 ```
@@ -186,9 +186,14 @@ iso_filename=${iso_path}
 livemedia=/dev/disk/by-uuid/${rootuuid}:${iso_path}
 ```
 
-## antiX / MX Linux / Damn Small Linux
+## Damn Small Linux
 ```
-fromiso=${iso_path} from=hd,usb
+fromiso=${iso_path} from=hd,usb,mmc
+```
+
+## antiX / MX Linux
+```
+fromiso=${iso_path} buuid=${rootuuid}
 ```
 
 ## ALT Linux
@@ -208,16 +213,12 @@ CDL_DEV=UUID=${rootuuid} CDL_IMG=${iso_path} CDL_DIR=/
 
 ## TinyCore
 ```
-iso=UUID=${rootuuid}${iso_path}
-```
-
-```
-tce=UUID=${rootuuid}${iso_path}
+iso=UUID=${rootuuid}${iso_path} tce=UUID=${rootuuid}${iso_path}
 ```
 
 ## Knoppix
 ```
-bootfrom=/dev/*${iso_path}
+bootfrom=/mnt-iso${iso_path}
 ```
 
 ## Qubes
