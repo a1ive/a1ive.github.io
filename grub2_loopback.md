@@ -41,9 +41,15 @@ findiso=${iso_path} boot=live
 ```
 iso-scan/filename=${iso_path} root=live:CDLABEL=${cd_label} rd.live.image
 ```
+
 ### DVD & Netinstall
 ```
 iso-scan/filename=${iso_path} inst.stage2=hd:LABEL=${cd_label}
+```
+
+### Minimal Install
+```
+iso-scan/filename=${iso_path} inst.stage2=hd:UUID=${loopuuid}
 ```
 
 ## Arch-based
