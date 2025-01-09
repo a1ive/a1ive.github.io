@@ -13,17 +13,17 @@
 
 You can use the following command to get these values:  
 ```bash
-  set iso_path=/path/to/iso.iso
-  export iso_path
-  search --set=root --file $iso_path
-  loopback loop $iso_path
-  set root=loop
-  probe --set=rootuuid --fs-uuid ($root)
-  export rootuuid
-  probe --set=cd_label --label (loop)
-  export cd_label
-  probe --set=loopuuid --fs-uuid (loop)
-  export loopuuid
+set iso_path=/path/to/iso.iso
+export iso_path
+search --set=root --file $iso_path
+probe --set=rootuuid --fs-uuid ($root)
+export rootuuid
+loopback loop $iso_path
+set root=loop
+probe --set=cd_label --label (loop)
+export cd_label
+probe --set=loopuuid --fs-uuid (loop)
+export loopuuid
 ```
 
 ## Ubuntu-based
@@ -129,11 +129,7 @@ bootfromiso=${iso_path}
 
 ## PCLinuxOS
 ```
-root=UUID=${rootuuid} isoboot=${iso_path}
-```
-
-```
-bootfromiso=${iso_path} root=(loop)
+bootfromiso=${iso_path} root=UUID=${rootuuid}
 ```
 
 ## Calculate Linux
