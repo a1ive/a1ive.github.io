@@ -106,11 +106,6 @@ fromiso=${iso_path} findiso=${iso_path}
 fromiso=${iso_path}
 ```
 
-## OpenMandriva
-```
-iso-scan/filename=${iso_path} root=live:LABEL=${cd_label}
-```
-
 ## System Rescue CD
 ### Gentoo-based
 ```
