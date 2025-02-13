@@ -139,7 +139,7 @@ iso-scan/filename=${iso_path}
 
 ## Slax / Porteus
 ```
-fromiso=${iso_path}
+from=${iso_path}
 ```
 
 ## WifiSlax
@@ -150,7 +150,7 @@ livemedia=/dev/disk/by-uuid/${rootuuid}:${iso_path}"
 
 ### Older versions
 ```
-fromiso=${iso_path}
+from=${iso_path}
 ```
 
 ### Wifiway
