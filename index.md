@@ -10,11 +10,9 @@ layout: default
 
   Universal boot loader based on GRUB Legacy.
 
-  Download: [GitHub](https://github.com/chenall/grub4dos/releases) [chenall.net](http://grub4dos.chenall.net/)
+  Download: [GitHub](https://github.com/chenall/grub4dos/releases)
 
   [grubutils](https://github.com/chenall/grubutils): Extra utilities for grub4dos.
-
-  [ntloader](https://github.com/grub4dos/ntloader): Windows NT6+ VHD/WIM loader.
 
 - ### [NWinfo](https://a1ive.github.io/nwinfo)
 
@@ -23,6 +21,12 @@ layout: default
   Hardware information utility for Windows.
 
   [libcdi](https://github.com/a1ive/libcdi): Wrap CrystalDiskInfo into a DLL.
+
+- ### [NTloader](https://github.com/grub4dos/ntloader)
+
+  ![](https://img.shields.io/github/license/grub4dos/ntloader) ![](https://img.shields.io/github/stars/grub4dos/ntloader?style=flat) ![](https://img.shields.io/github/downloads/grub4dos/ntloader/total)
+
+  Windows NT6+ VHD/WIM loader.
 
 - ### [a1ive GRUB & FileManager](https://github.com/a1ive/grub2-filemanager)
 
@@ -49,6 +53,10 @@ layout: default
   Tetris game for UEFI.
 
 ## My Contributions
+
+- ### [GNU GRUB](https://www.gnu.org/software/grub/)
+
+  GNU GRUB is a boot loader package from the GNU Project.
 
 - ### [Ventoy](https://github.com/ventoy/Ventoy)
 
