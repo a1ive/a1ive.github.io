@@ -101,6 +101,11 @@ isoboot={iso_path}
 fromiso=${iso_path} findiso=${iso_path}
 ```
 
+## NixOS
+```
+findiso=${iso_path}
+```
+
 ## Siduction
 ```
 fromiso=${iso_path}
