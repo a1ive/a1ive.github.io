@@ -26,6 +26,19 @@ probe --set=loopuuid --fs-uuid (loop)
 export loopuuid
 ```
 
+## Loopback-booting
+```
+menuentry "TITLE" {
+  iso_path=PATH
+  export iso_path
+  search --set=root --file $iso_path
+  loopback loop $iso_path
+  root=(loop)
+  configfile /boot/grub/loopback.cfg
+  loopback --delete loop
+}
+```
+
 ## Ubuntu-based
 ```
 iso-scan/filename=${iso_path} boot=casper
