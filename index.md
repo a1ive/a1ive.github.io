@@ -22,6 +22,10 @@ layout: default
 
   [libcdi](https://github.com/a1ive/libcdi): Wrap CrystalDiskInfo into a DLL.
 
+  [dmidecode-win32](https://github.com/a1ive/dmidecode): Win32 port of the dmidecode utility.
+
+  [edid-decode-win32](https://github.com/a1ive/edid-decode): Win32 port of the edid-decode utility from the Linux V4L-utils package.
+
 - ### [NTloader](https://github.com/grub4dos/ntloader)
 
   ![](https://img.shields.io/github/license/grub4dos/ntloader) ![](https://img.shields.io/github/stars/grub4dos/ntloader?style=flat) ![](https://img.shields.io/github/downloads/grub4dos/ntloader/total)
@@ -40,6 +44,11 @@ layout: default
 
   Theme: [Win95 Theme](https://github.com/a1ive/grub-theme-win95)
 
+- ### [ZenEmu](https://github.com/a1ive/ZenEmu)
+  ![](https://img.shields.io/github/license/a1ive/ZenEmu) ![](https://img.shields.io/github/downloads/a1ive/ZenEmu/total) ![](https://img.shields.io/github/v/release/a1ive/ZenEmu)
+
+  A simple GUI for QEMU on Windows.
+
 - ### [NkArc](https://github.com/a1ive/NkArc)
 
   ![](https://img.shields.io/github/license/a1ive/NkArc) ![](https://img.shields.io/github/stars/a1ive/NkArc?style=flat)
@@ -51,6 +60,12 @@ layout: default
   ![](https://img.shields.io/github/license/a1ive/uefi-tetris) ![](https://img.shields.io/github/stars/a1ive/uefi-tetris?style=flat)
 
   Tetris game for UEFI.
+
+- ### [WinAwake](https://github.com/a1ive/WinAwake)
+
+  ![](https://img.shields.io/github/license/a1ive/WinAwake)
+
+  A lightweight Windows utility to prevent unwanted system sleep and display blanking.
 
 ## My Contributions
 
