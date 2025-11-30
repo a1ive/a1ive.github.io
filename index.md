@@ -46,7 +46,7 @@ layout: default
 
 - ### [ZenEmu](https://github.com/a1ive/ZenEmu)
 
-  ![license](https://img.shields.io/github/license/a1ive/ZenEmu) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total)
+  ![license](https://img.shields.io/github/license/a1ive/ZenEmu) ![stars](https://img.shields.io/github/stars/a1ive/ZenEmu?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total)
 
   A simple GUI for QEMU on Windows.
 
