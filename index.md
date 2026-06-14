@@ -52,7 +52,7 @@ layout: default
 
 - ### [fvetool](https://github.com/a1ive/fvetool)
 
-  ![license](https://img.shields.io/github/license/a1ive/fvetool)
+  ![license](https://img.shields.io/github/license/a1ive/fvetool) ![stars](https://img.shields.io/github/stars/a1ive/fvetool?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/fvetool/total.svg)
 
   A tool for managing Windows BitLocker drives based on undocumented FVE APIs.
 
