@@ -58,11 +58,17 @@ layout: default
 
 ## Ports
 
-- ### [dmidecode-win32](https://github.com/a1ive/dmidecode): Win32 port of the dmidecode utility.
+- ### [dmidecode-win32](https://github.com/a1ive/dmidecode)
 
-- ### [edid-decode-win32](https://github.com/a1ive/edid-decode): Win32 port of the edid-decode utility from the Linux V4L-utils package.
+  Win32 port of the dmidecode utility.
 
-- ### [udpcast-win32](https://github.com/a1ive/udpcast): Win32 port of the UDPcast tool.
+- ### [edid-decode-win32](https://github.com/a1ive/edid-decode)
+
+  Win32 port of the edid-decode utility from the Linux V4L-utils package.
+
+- ### [udpcast-win32](https://github.com/a1ive/udpcast)
+
+  Win32 port of the UDPcast tool.
 
 ## Contributions
 
