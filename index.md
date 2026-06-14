@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## My Projects
+## Projects
 
 - ### [GRUB4DOS](https://github.com/chenall/grub4dos)
 
@@ -19,12 +19,6 @@ layout: default
   ![license](https://img.shields.io/github/license/a1ive/nwinfo) ![stars](https://img.shields.io/github/stars/a1ive/nwinfo?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/nwinfo/total.svg)
 
   Hardware information utility for Windows.
-
-  [libcdi](https://github.com/a1ive/libcdi): Wrap CrystalDiskInfo into a DLL.
-
-  [dmidecode-win32](https://github.com/a1ive/dmidecode): Win32 port of the dmidecode utility.
-
-  [edid-decode-win32](https://github.com/a1ive/edid-decode): Win32 port of the edid-decode utility from the Linux V4L-utils package.
 
 - ### [NTloader](https://github.com/grub4dos/ntloader)
 
@@ -56,7 +50,21 @@ layout: default
 
   A versatile multi filesystem explorer for Windows.
 
-## My Contributions
+- ### [fvetool](https://github.com/a1ive/fvetool)
+
+  ![license](https://img.shields.io/github/license/a1ive/fvetool)
+
+  A tool for managing Windows BitLocker drives based on undocumented FVE APIs.
+
+## Ports
+
+- ### [dmidecode-win32](https://github.com/a1ive/dmidecode): Win32 port of the dmidecode utility.
+
+- ### [edid-decode-win32](https://github.com/a1ive/edid-decode): Win32 port of the edid-decode utility from the Linux V4L-utils package.
+
+- ### [udpcast-win32](https://github.com/a1ive/udpcast): Win32 port of the UDPcast tool.
+
+## Contributions
 
 - ### [GNU GRUB](https://www.gnu.org/software/grub/)
 
@@ -70,7 +78,11 @@ layout: default
 
   A new bootable USB solution.
 
-  [vtoydump](https://github.com/ventoy/vtoydump): A tool used with "Ventoy Compatible".
+- ### [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
+
+  ![license](https://img.shields.io/github/license/LibreHardwareMonitor/LibreHardwareMonitor) ![stars](https://img.shields.io/github/stars/LibreHardwareMonitor/LibreHardwareMonitor?style=flat) ![total](https://img.shields.io/github/downloads/LibreHardwareMonitor/LibreHardwareMonitor/total.svg)
+
+  Libre Hardware Monitor is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer.
 
 - ### [iPXE wimboot](https://github.com/ipxe/wimboot)
 
