@@ -46,7 +46,7 @@ layout: default
 
 - ### [efiloader](https://github.com/a1ive/efiloader)
 
-  ![license](https://img.shields.io/github/license/a1ive/efiloader) ![stars](https://img.shields.io/github/stars/a1ive/efiloader?style=flat)
+  ![license](https://img.shields.io/github/license/a1ive/efiloader) ![stars](https://img.shields.io/github/stars/a1ive/efiloader?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/efiloader/total)
 
   Loads EFI applications from Windows Boot Manager.
 
