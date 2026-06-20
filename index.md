@@ -38,17 +38,23 @@ layout: default
 
   Theme: [Win95 Theme](https://github.com/a1ive/grub-theme-win95)
 
-- ### [ZenEmu](https://github.com/a1ive/ZenEmu)
-
-  ![license](https://img.shields.io/github/license/a1ive/ZenEmu) ![stars](https://img.shields.io/github/stars/a1ive/ZenEmu?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total)
-
-  A simple GUI for QEMU on Windows.
-
 - ### [NkArc](https://github.com/a1ive/NkArc)
 
   ![license](https://img.shields.io/github/license/a1ive/NkArc) ![stars](https://img.shields.io/github/stars/a1ive/NkArc?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/NkArc/total)
 
   A versatile multi filesystem explorer for Windows.
+
+- ### [efiloader](https://github.com/a1ive/efiloader)
+
+  ![license](https://img.shields.io/github/license/a1ive/efiloader) ![stars](https://img.shields.io/github/stars/a1ive/efiloader?style=flat)
+
+  Loads EFI applications from Windows Boot Manager.
+
+- ### [ZenEmu](https://github.com/a1ive/ZenEmu)
+
+  ![license](https://img.shields.io/github/license/a1ive/ZenEmu) ![stars](https://img.shields.io/github/stars/a1ive/ZenEmu?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total)
+
+  A simple GUI for QEMU on Windows.
 
 - ### [fvetool](https://github.com/a1ive/fvetool)
 
