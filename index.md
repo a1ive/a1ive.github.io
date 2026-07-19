@@ -38,11 +38,11 @@ layout: default
 
   Theme: [Win95 Theme](https://github.com/a1ive/grub-theme-win95)
 
-- ### [NkArc](https://github.com/a1ive/NkArc)
+- ### [FsRover](https://github.com/a1ive/FsRover)
 
-  ![license](https://img.shields.io/github/license/a1ive/NkArc) ![stars](https://img.shields.io/github/stars/a1ive/NkArc?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/NkArc/total)
+  ![license](https://img.shields.io/github/license/a1ive/FsRover) ![stars](https://img.shields.io/github/stars/a1ive/FsRover?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/FsRover/total)
 
-  A versatile multi filesystem explorer for Windows.
+  A multi-filesystem explorer for Windows.
 
 - ### [efiloader](https://github.com/a1ive/efiloader)
 
