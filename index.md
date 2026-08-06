@@ -20,6 +20,12 @@ layout: default
 
   Hardware information utility for Windows.
 
+- ### [FsRover](https://github.com/a1ive/FsRover)
+
+  ![license](https://img.shields.io/github/license/a1ive/FsRover) ![stars](https://img.shields.io/github/stars/a1ive/FsRover?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/FsRover/total)
+
+  Multi-filesystem explorer for Windows.
+
 - ### [NTloader](https://github.com/grub4dos/ntloader)
 
   ![license](https://img.shields.io/github/license/grub4dos/ntloader) ![stars](https://img.shields.io/github/stars/grub4dos/ntloader?style=flat) ![total](https://img.shields.io/github/downloads/grub4dos/ntloader/total)
@@ -38,12 +44,6 @@ layout: default
 
   Theme: [Win95 Theme](https://github.com/a1ive/grub-theme-win95)
 
-- ### [FsRover](https://github.com/a1ive/FsRover)
-
-  ![license](https://img.shields.io/github/license/a1ive/FsRover) ![stars](https://img.shields.io/github/stars/a1ive/FsRover?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/FsRover/total)
-
-  A multi-filesystem explorer for Windows.
-
 - ### [efiloader](https://github.com/a1ive/efiloader)
 
   ![license](https://img.shields.io/github/license/a1ive/efiloader) ![stars](https://img.shields.io/github/stars/a1ive/efiloader?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/efiloader/total
@@ -55,13 +55,19 @@ layout: default
 
   ![license](https://img.shields.io/github/license/a1ive/ZenEmu) ![stars](https://img.shields.io/github/stars/a1ive/ZenEmu?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/ZenEmu/total)
 
-  A simple GUI for QEMU on Windows.
+  Simple GUI for QEMU on Windows.
 
 - ### [fvetool](https://github.com/a1ive/fvetool)
 
   ![license](https://img.shields.io/github/license/a1ive/fvetool) ![stars](https://img.shields.io/github/stars/a1ive/fvetool?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/fvetool/total.svg)
 
-  A tool for managing Windows BitLocker drives based on undocumented FVE APIs.
+  CLI/GUI tools for managing Windows BitLocker drives based on undocumented FVE APIs.
+
+- ### [FileXRay](https://github.com/a1ive/FileXRay)
+
+  ![license](https://img.shields.io/github/license/a1ive/FileXRay) ![stars](https://img.shields.io/github/stars/a1ive/FileXRay?style=flat) ![total](https://img.shields.io/github/downloads/a1ive/FileXRay/total.svg)
+
+  Windows shell extension for file type detection, hashes, and format-specific inspection.
 
 ## Ports
 
@@ -76,29 +82,3 @@ layout: default
 - ### [udpcast-win32](https://github.com/a1ive/udpcast)
 
   Win32 port of the UDPcast tool.
-
-## Contributions
-
-- ### [GNU GRUB](https://www.gnu.org/software/grub/)
-
-  ![license](https://img.shields.io/github/license/rhboot/grub2)
-
-  GNU GRUB is a boot loader package from the GNU Project.
-
-- ### [Ventoy](https://github.com/ventoy/Ventoy)
-
-  ![license](https://img.shields.io/github/license/ventoy/Ventoy) ![stars](https://img.shields.io/github/stars/ventoy/Ventoy?style=flat) ![total](https://img.shields.io/github/downloads/ventoy/Ventoy/total.svg)
-
-  A new bootable USB solution.
-
-- ### [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor)
-
-  ![license](https://img.shields.io/github/license/LibreHardwareMonitor/LibreHardwareMonitor) ![stars](https://img.shields.io/github/stars/LibreHardwareMonitor/LibreHardwareMonitor?style=flat) ![total](https://img.shields.io/github/downloads/LibreHardwareMonitor/LibreHardwareMonitor/total.svg)
-
-  Libre Hardware Monitor is free software that can monitor the temperature sensors, fan speeds, voltages, load and clock speeds of your computer.
-
-- ### [iPXE wimboot](https://github.com/ipxe/wimboot)
-
-  ![license](https://img.shields.io/github/license/ipxe/wimboot) ![stars](https://img.shields.io/github/stars/ipxe/wimboot?style=flat) ![total](https://img.shields.io/github/downloads/ipxe/wimboot/total.svg)
-
-  Windows Imaging Format bootloader.
