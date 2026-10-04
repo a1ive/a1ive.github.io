@@ -26,6 +26,12 @@ layout: default
 
   Multi-filesystem explorer for Windows.
 
+- ### [Astraxis](https://github.com/a1ive/Astraxis)
+
+   ![license](https://img.shields.io/github/license/a1ive/Astraxis) ![stars](https://img.shields.io/github/stars/a1ive/Astraxis?style=flat)
+
+   A physically grounded astronomy visualizer driven by real ephemerides and orbital dynamics.
+
 - ### [NTloader](https://github.com/grub4dos/ntloader)
 
   ![license](https://img.shields.io/github/license/grub4dos/ntloader) ![stars](https://img.shields.io/github/stars/grub4dos/ntloader?style=flat) ![total](https://img.shields.io/github/downloads/grub4dos/ntloader/total)
